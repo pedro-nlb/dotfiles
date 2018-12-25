@@ -51,10 +51,15 @@ mkdir git
 cd git
 ```
 
-From GitHub, copy the clone URL of this repository, say *https://github.com/username/dotfiles*, and in the terminal run
+From GitHub, copy the clone URL of this repository, say https://github.com/username/dotfiles, and in the terminal run
 
 ```
 git clone https://github.com/username/dotfiles
 ```
 
+Finally create the corresponding symbolic links. In our example we would run
 
+```
+ln -s /home/user/git/dotfiles/.bashrc /home/user/.bashrc
+ln -s /home/user/git/dotfiles/.vimrc /home/user/.vimrc
+```
