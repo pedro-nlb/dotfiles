@@ -57,7 +57,7 @@ From GitHub, copy the clone URL of this repository, say https://github.com/usern
 git clone https://github.com/username/dotfiles
 ```
 
-Finally create the corresponding symbolic links. In our example we would run
+Finally create the corresponding [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link). In our example we would run
 
 ```
 ln -s /home/user/git/dotfiles/.bashrc /home/user/.bashrc
