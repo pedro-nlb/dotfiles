@@ -44,18 +44,17 @@ To see your dotfiles, run `ls -a`. Create a folder to backup your current dotfil
 mv .bashrc ~/old_dotfiles/.bashrc
 mv .vimrc ~/old_dotfiles/.vimrc
 ```
-
-Create a folder to make a local copy of the repository and change the current directory to this new folder. For example
+Change the current directory to the directory in which you want to clone this repository. For example
 
 ```
 mkdir git
 cd git
-mkdir dotfiles
-cd dotfiles
 ```
 
-From GitHub, copy the clone URL of this repository, say *https://github.com/your-username/this-respository*, and in the terminal run
+From GitHub, copy the clone URL of this repository, say *https://github.com/username/dotfiles*, and in the terminal run
 
 ```
-git clone https://github.com/your-username/this-respository
+git clone https://github.com/username/dotfiles
 ```
+
+
