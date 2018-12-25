@@ -45,4 +45,17 @@ mv .bashrc ~/old_dotfiles/.bashrc
 mv .vimrc ~/old_dotfiles/.vimrc
 ```
 
-Create a folder to make a local copy of the repository. For example
+Create a folder to make a local copy of the repository and change the current directory to this new folder. For example
+
+```
+mkdir git
+cd git
+mkdir dotfiles
+cd dotfiles
+```
+
+From GitHub, copy the clone URL of this repository, say *https://github.com/your-username/this-respository*, and in the terminal run
+
+```
+git clone https://github.com/your-username/this-respository
+```
