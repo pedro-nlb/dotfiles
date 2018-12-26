@@ -51,11 +51,11 @@ mkdir git
 cd git
 ```
 
-From GitHub, copy the clone URL of this repository, say https://github.com/username/dotfiles, and in the terminal run
+From GitHub, copy the clone URL of this repository, say https://github.com/username/dotfiles.git, and in the terminal run
 
 ```
-git clone https://github.com/username/dotfiles
-git remote add upstream https://github.com/username/dotfiles
+git clone https://github.com/username/dotfiles.git
+git remote add upstream https://github.com/username/dotfiles.git
 ```
 
 Finally create the corresponding [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link). In our example we would run
