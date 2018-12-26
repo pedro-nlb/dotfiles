@@ -79,7 +79,11 @@ Then pull the changes from GitHub by running the command
 git pull upstream master
 ```
 
-**Shortcut**: if *.bash_aliases* is one of the files that is taken from this repository, it is enough to run `pulldots`.
+**Shortcut**: if *.bash_aliases* is one of the files that is taken from this repository, it is enough to run
+
+```
+pulldots
+```
 
 ### Push changes to GitHub
 
@@ -97,4 +101,8 @@ git commit -m "Commit message, e.g. updated .bashrc"
 git push origin master
 ```
 
-**Shortcut**: if *.bash_aliases* is one of the files that is taken from this repository, it is enough to run `pushdots "Commit message, e.g. updated .bashrc`.
+**Shortcut**: if *.bash_aliases* is one of the files that is taken from this repository, it is enough to run
+
+```
+pushdots "Commit message, e.g. updated .bashrc"
+```
