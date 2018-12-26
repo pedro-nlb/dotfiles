@@ -107,3 +107,7 @@ git push origin master
 ```
 pushdots "Commit message, e.g. updated .bashrc"
 ```
+
+## To do:
+
+- Fix spaced string parameter issue with the pushdots function on the .bashrc.
