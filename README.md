@@ -11,7 +11,7 @@ I use this repository to synchronize some files such as *.bashrc* or *.vimrc* be
 - [Window manager](https://wiki.archlinux.org/index.php/Window_manager): [i3](https://wiki.archlinux.org/index.php/I3).
 - [Terminal emulator](https://en.wikipedia.org/wiki/Terminal_emulator): [rxvt-unicode](https://wiki.archlinux.org/index.php/rxvt-unicode).
 
-If you use different programs, you will need to change the content of the files or even the files themselves.
+If you use different programs, you will need to change the content of the files or even the files themselves. If you are not me, you will also need to replace here and there my username by yours.
 
 ## Quick guide
 
