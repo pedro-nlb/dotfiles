@@ -55,6 +55,7 @@ From GitHub, copy the clone URL of this repository, say https://github.com/usern
 
 ```
 git clone https://github.com/username/dotfiles.git
+cd dotfiles
 git remote add upstream https://github.com/username/dotfiles.git
 ```
 
