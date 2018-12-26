@@ -101,7 +101,7 @@ git commit -m "Commit message, e.g. updated .bashrc"
 git push origin master
 ```
 
-**Shortcut**: if *.bash_aliases* is one of the files that is taken from this repository, it is enough to run
+**Shortcut**: if *.bashrc* is one of the files that is taken from this repository, it is enough to run
 
 ```
 pushdots "Commit message, e.g. updated .bashrc"
