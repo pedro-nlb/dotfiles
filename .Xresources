@@ -30,8 +30,8 @@
 *color15:		#f1efee
 
 
-
-URxvt.background:	[90]#000000
+URxvt.depth:		32
+URxvt.background:	rgba:0000/0000/0200/c800
 
 URxvt.intensityStyles:	false
 URxvt.font:		xft:monospace:size=14
