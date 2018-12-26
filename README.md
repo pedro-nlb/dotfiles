@@ -32,7 +32,7 @@ git config --global merge.tool vimdiff
 
 ### Initial setup
 
-Open a new terminal window (Ctrl+Alt+t). It should open by default in your home folder. To make sure this is the case, run the command `pwd`. The output should be
+Open a new terminal window. It should open by default in your home folder. To make sure this is the case, run the command `pwd`. The output should be
 
 ```
 /home/yourusername
@@ -64,3 +64,37 @@ Finally create the corresponding [symbolic links](https://en.wikipedia.org/wiki/
 ln -s /home/user/git/dotfiles/.bashrc /home/user/.bashrc
 ln -s /home/user/git/dotfiles/.vimrc /home/user/.vimrc
 ```
+
+### Pull changes from GitHub
+
+Open a new terminal window. Change the current directory to the directory of the local repository. In our example, run
+
+```
+cd /home/user/git/dotfiles
+```
+
+Then pull the changes from GitHub by running the command
+
+```
+git pull upstream master
+```
+
+**Shortcut**: if *.bash_aliases* is one of the files that is taken from this repository, it is enough to run `pulldots`.
+
+### Push changes to GitHub
+
+Open a new terminal window. Change the current directory to the directory of the local repository. In our example, run
+
+```
+cd /home/user/git/dotfiles
+```
+
+Then add, commit and push the local changes to GitHub by running the commands
+
+```
+git add .
+git commit -m "Commit message, e.g. updated .bashrc"
+git push origin master
+```
+
+**Shortcut**: if *.bash_aliases* is one of the files that is taken from this repository, it is enough to run `pushdots`.
