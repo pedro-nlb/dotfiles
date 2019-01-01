@@ -7,3 +7,4 @@ alias sma="xdg-open /home/pedro/git/thesis/main.pdf";
 alias uma="cd /home/pedro/git/thesis; pdflatex main.tex; cd";
 alias marefs="vim /home/pedro/git/thesis/refs.bib";
 alias umarefs="cd /home/pedro/git/thesis; pdflatex main.tex; biber main; pdflatex main.tex; pdflatex main.tex; cd";
+alias matodo="vim /home/pedro/git/thesis/README.md";

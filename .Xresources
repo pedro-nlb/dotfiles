@@ -1,8 +1,6 @@
 *foreground:		#a8a19f
 *foreground_bold:	#a8a19f
 *cursor:		#a8a19f
-!!*background:		[70]#1b1918
-!!*background:		rgba(0,0,0,.7)
 
 !! black
 *color0:		#1b1918
@@ -29,11 +27,9 @@
 *color7:		#a8a19f
 *color15:		#f1efee
 
-
 URxvt.depth:		32
-URxvt.background:	rgba:0000/0000/0200/c800
+URxvt.background:	[90]#000000
 
 URxvt.scrollBar:	false
 
 URxvt.font:		xft:monospace:size=14
-
