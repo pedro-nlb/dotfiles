@@ -28,7 +28,7 @@ pushdots() {
 	cd;
 }
 
-pushthesis() {
+pushma() {
 	# Push the progress on the thesis
 	# The parameters are used as commit message
 	cd /home/pedro/git/thesis;
