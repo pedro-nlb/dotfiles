@@ -11,8 +11,6 @@ set hlsearch
 " Usability options
 set ignorecase
 set smartcase
-set backspace=indent,eol,start
-set autoindent
 set ruler
 set confirm
 set mouse=a
@@ -22,7 +20,6 @@ set number
 " Indentation options
 set shiftwidth=4
 set softtabstop=4
-set expandtab
 
 " Colors and themes
 colorscheme jellybeans
@@ -31,3 +28,5 @@ colorscheme jellybeans
 nnoremap <F5> <Esc> :w <bar> :! pdflatex % && xdg-open %:t:r.pdf <CR>
 inoremap <F5> <Esc> :w <bar> :! pdflatex % && xdg-open %:t:r.pdf <CR>
 nnoremap <C-L> :nohl<CR><C-L>
+noremap j gj
+noremap k gk

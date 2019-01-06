@@ -10,3 +10,4 @@ alias umarefs="cd /home/pedro/git/thesis; pdflatex main.tex; biber main; pdflate
 alias matodo="vim /home/pedro/git/thesis/README.md";
 alias har77="xdg-open /home/pedro/Documents/MathRefs/har77.djvu";
 alias huy06="xdg-open /home/pedro/Documents/MathRefs/huy06.pdf";
+alias har66="xdg-open /home/pedro/Documents/MathRefs/har66.pdf";
