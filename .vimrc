@@ -25,8 +25,10 @@ set softtabstop=4
 colorscheme jellybeans
 
 " Key mappings
-nnoremap <F5> <Esc> :w <bar> :! pdflatex % && xdg-open %:t:r.pdf <CR>
-inoremap <F5> <Esc> :w <bar> :! pdflatex % && xdg-open %:t:r.pdf <CR>
+nnoremap <F5> <Esc> :w <bar> :! pdflatex % <CR>
+" nnoremap <F5> <Esc> :w <bar> :! pdflatex % && xdg-open %:t:r.pdf <CR>
+inoremap <F5> <Esc> :w <bar> :! pdflatex % <CR>
+" inoremap <F5> <Esc> :w <bar> :! pdflatex % && xdg-open %:t:r.pdf <CR>
 nnoremap <C-L> :nohl<CR><C-L>
 noremap j gj
 noremap k gk
