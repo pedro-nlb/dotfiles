@@ -32,3 +32,5 @@ inoremap <F5> <Esc> :w <bar> :! pdflatex % <CR>
 nnoremap <C-L> :nohl<CR><C-L>
 noremap j gj
 noremap k gk
+noremap <Up> gk
+noremap <Down> gj
