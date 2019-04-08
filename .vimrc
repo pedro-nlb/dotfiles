@@ -22,7 +22,7 @@ set shiftwidth=4
 set softtabstop=4
 
 " Colors and themes
-colorscheme jellybeans
+"colorscheme jellybeans
 
 " Key mappings
 nnoremap <F5> <Esc> :w <bar> :! pdflatex % <CR>
