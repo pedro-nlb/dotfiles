@@ -10,3 +10,4 @@ alias umarefs="cd /home/pedro/git/thesis; pdflatex main.tex; biber main; pdflate
 alias matodo="vim /home/pedro/git/thesis/README.md";
 alias b="book";
 alias p="paper";
+alias pkglsup="pacman -Qqe > ~/Docs/pkglist.txt";
