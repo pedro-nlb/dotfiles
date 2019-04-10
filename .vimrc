@@ -26,21 +26,21 @@ set softtabstop=4
 "colorscheme jellybeans
 
 " Key mappings
-nnoremap <F5> <Esc> :w <bar> :! pdflatex % <CR>
-" nnoremap <F5> <Esc> :w <bar> :! pdflatex % && xdg-open %:t:r.pdf <CR>
-inoremap <F5> <Esc> :w <bar> :! pdflatex % <CR>
-" inoremap <F5> <Esc> :w <bar> :! pdflatex % && xdg-open %:t:r.pdf <CR>
+"nnoremap <F5> <Esc> :w <bar> :! pdflatex % <CR>
+nnoremap <F5> <Esc> :w <bar> :! latexmk -pdf % && okular %:t:r.pdf & <CR>
+"inoremap <F5> <Esc> :w <bar> :! pdflatex % <CR>
+"inoremap <F5> <Esc> :w <bar> :! pdflatex % && okular %:t:r.pdf <CR>
 nnoremap <C-L> :nohl<CR><C-L>
 noremap j gj
 noremap k gk
 noremap <Up> gk
 noremap <Down> gj
 
-call plug#begin()
-Plug 'lervag/vimtex'
-let g:tex_flavor='latex'
+"call plug#begin()
+"Plug 'lervag/vimtex'
+"let g:tex_flavor='latex'
 "let g:vimtex_view_method='okular'
 "let g:vimtex_quickfix_mode=0
 "set conceallevel=1
 "let g:tex_conceal='abdmg'
-call plug#end()
+"call plug#end()
