@@ -41,11 +41,11 @@ pushma() {
 book() {
     # Open some book in the book folder. Location: ~/books
     # If single author: "first three letters of name"+"last two digits of year". If two or more authors: "initial letters of authors"+"last two digits of year".
-    xdg-open /home/pedro/books/$1.*;
+    okular /home/pedro/books/$1.*;
 }
 
 paper() {
     # Open some paper in the paper folder. Location: ~/papers
     # If single author: "first three letters of name"+"last two digits of year". If two or more authors: "initial letters of authors"+"last two digits of year".
-    xdg-open /home/pedro/papers/$1.*;
+    okular /home/pedro/papers/$1.*;
 }
