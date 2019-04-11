@@ -16,6 +16,7 @@ set confirm
 set mouse=a
 set cmdheight=2
 set number
+set display+=lastline
 
 " Indentation options
 set shiftwidth=4
