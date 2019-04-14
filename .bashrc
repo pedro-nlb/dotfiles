@@ -7,13 +7,8 @@
 
 alias ls='ls --color=auto'
 #PS1=$'[\u@\h \W]\$ '
-<<<<<<< HEAD
 PS1=$'\[\e[0m\][\[\e[31m\]\u\[\e[33m\]@\h \[\e[34m\]$PWD\[\e[0m\]]\[\e[32m\]\$ '
-# PS1=$'Go study math! \e[31m\]\u2764\e[33m\]\u222bK=2\u03c0\u03c7\e[31m\]\u2764 \e[32m\]\u2714 \e[34m\]\w \e[0m\]\$ ' #(This one is too much, causes some trouble with the input. But why?)
-=======
-PS1=$'\[\e[0m\][\[\e[31m\]\u\[\e[33m\]@\h \[\e[34m\]\W\[\e[0m\]]\[\e[32m\]\$ '
 #PS1=$'Go study math! \e[31m\]\u2764\e[33m\]\u222bK=2\u03c0\u03c7\e[31m\]\u2764 \e[32m\]\u2714 \e[34m\]\w \e[0m\]\$ ' #(This one is too much, causes some trouble with the input. But why?)
->>>>>>> 0e9c25ad0f9a39b4da24f032f40e5cce0e210cb1
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
