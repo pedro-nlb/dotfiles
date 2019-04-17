@@ -38,6 +38,16 @@ pushma() {
     cd;
 }
 
+pushtalk() {
+    # Push the progress on the talk
+    # The parameters are used as commit message
+    cd /home/pedro/git/bymat;
+    git add .;
+    git commit -m "$*";
+    git push origin master;
+    cd;
+}
+
 book() {
     # Open some book in the book folder. Location: ~/books
     # If single author: "first three letters of name"+"last two digits of year". If two or more authors: "initial letters of authors"+"last two digits of year".

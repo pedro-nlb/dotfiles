@@ -28,6 +28,7 @@ set softtabstop=4
 
 " Key mappings
 "nnoremap <F5> <Esc> :w <bar> :! pdflatex % <CR>
+nnoremap <F2> <Esc> :w <bar> :! latexmk -pdf main.tex && okular main.pdf & <CR>
 nnoremap <F5> <Esc> :w <bar> :! latexmk -pdf % && okular %:t:r.pdf & <CR>
 "inoremap <F5> <Esc> :w <bar> :! pdflatex % <CR>
 "inoremap <F5> <Esc> :w <bar> :! pdflatex % && okular %:t:r.pdf <CR>
