@@ -51,17 +51,17 @@ pushtalk() {
 book() {
     # Open some book in the book folder. Location: ~/books
     # If single author: "first three letters of name"+"last two digits of year". If two or more authors: "initial letters of authors"+"last two digits of year".
-    okular /home/pedro/books/$1.*;
+    okular /home/pedro//refs/books/$1.*;
 }
 
 notes() {
     # Open some lelcture notes in the notes folder. Location: ~/notes
     # If single author: "first three letters of name"+"last two digits of year". If two or more authors: "initial letters of authors"+"last two digits of year".
-    okular /home/pedro/notes/$1.*;
+    okular /home/pedro/refs/notes/$1.*;
 }
 
 paper() {
     # Open some paper in the paper folder. Location: ~/papers
     # If single author: "first three letters of name"+"last two digits of year". If two or more authors: "initial letters of authors"+"last two digits of year".
-    okular /home/pedro/papers/$1.*;
+    okular /home/pedro/refs/papers/$1.*;
 }
