@@ -13,6 +13,7 @@ alias marefs="vim /home/pedro/git/thesis/refs.bib";
 alias umarefs="cd /home/pedro/git/thesis; pdflatex main.tex; biber main; pdflatex main.tex; pdflatex main.tex; cd";
 alias matodo="vim /home/pedro/git/thesis/README.md";
 alias b="book";
+alias n="notes";
 alias p="paper";
 alias pkglsup="pacman -Qqe > ~/Docs/pkglist.txt";
 alias talk="cd /home/pedro/git/bymat; vim main.tex";
