@@ -28,8 +28,14 @@ set softtabstop=4
 
 " Key mappings
 "nnoremap <F5> <Esc> :w <bar> :! pdflatex % <CR>
-nnoremap <F2> <Esc> :w <bar> :! latexmk -pdf main.tex && okular main.pdf & <CR>
-nnoremap <F5> <Esc> :w <bar> :! latexmk -pdf % && okular %:t:r.pdf & <CR>
+" Compile
+nnoremap <F2> <Esc> :w <bar> :! latexmk -pdf main.tex & <CR>
+inoremap <F2> <Esc> :w <bar> :! latexmk -pdf main.tex & <CR>
+vnoremap <F2> <Esc> :w <bar> :! latexmk -pdf main.tex & <CR>
+" Compile and open pdf
+nnoremap <F5> <Esc> :w <bar> :! latexmk -pdf main.tex && okular main.pdf & <CR>
+inoremap <F5> <Esc> :w <bar> :! latexmk -pdf main.tex && okular main.pdf & <CR>
+vnoremap <F5> <Esc> :w <bar> :! latexmk -pdf main.tex && okular main.pdf & <CR>
 "inoremap <F5> <Esc> :w <bar> :! pdflatex % <CR>
 "inoremap <F5> <Esc> :w <bar> :! pdflatex % && okular %:t:r.pdf <CR>
 nnoremap <C-L> :nohl<CR><C-L>
@@ -37,6 +43,10 @@ noremap j gj
 noremap k gk
 noremap <Up> gk
 noremap <Down> gj
+imap ö {
+imap ä }
+imap ü ^
+imap # \
 
 "call plug#begin()
 "Plug 'lervag/vimtex'
