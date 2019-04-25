@@ -43,16 +43,12 @@ noremap j gj
 noremap k gk
 noremap <Up> gk
 noremap <Down> gj
-imap ö {
-imap ä }
-imap ü ^
-imap # \
+inoremap ö {
+inoremap ä }
+inoremap ü ^
+inoremap # \
+inoremap ’ #
+inoremap ø [
+inoremap þ ]
 
-"call plug#begin()
-"Plug 'lervag/vimtex'
-"let g:tex_flavor='latex'
-"let g:vimtex_view_method='okular'
-"let g:vimtex_quickfix_mode=0
-"set conceallevel=1
-"let g:tex_conceal='abdmg'
-"call plug#end()
+au BufReadPost *.tex set syntax=tex
