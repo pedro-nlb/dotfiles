@@ -1,5 +1,7 @@
 alias xup="xrdb ~/.Xresources";
 alias confi3="vim ~/.config/i3/config";
+alias x="exit";
+alias off="poweroff";
 alias pulldots="cd /home/pedro/git/dotfiles; git pull upstream master; cd; xrdb ~/.Xresources";
 alias pullma="cd /home/pedro/git/thesis; git pull upstream master; cd";
 alias ma="cd /home/pedro/git/thesis; vim main.tex";
@@ -18,4 +20,3 @@ alias b="book";
 alias n="notes";
 alias p="paper";
 alias pkglsup="pacman -Qqe > ~/Docs/pkglist.txt";
-alias talk="cd /home/pedro/git/bymat; vim main.tex";
