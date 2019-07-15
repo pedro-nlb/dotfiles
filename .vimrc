@@ -48,8 +48,13 @@ inoremap ö {
 inoremap ä }
 inoremap ü ^
 inoremap # \
-inoremap ’ #
-inoremap ø [
-inoremap þ ]
+inoremap § # 
+"inoremap ö begin
+"inoremap ä end
+"inoremap ü tikzcd
+"inoremap ’ #
+inoremap ø }
+inoremap → {
+inoremap þ ^
 
 au BufReadPost *.tex set syntax=tex

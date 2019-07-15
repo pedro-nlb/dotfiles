@@ -38,30 +38,20 @@ pushma() {
     cd;
 }
 
-pushtalk() {
-    # Push the progress on the talk
-    # The parameters are used as commit message
-    cd /home/pedro/git/bymat;
-    git add .;
-    git commit -m "$*";
-    git push origin master;
-    cd;
-}
-
 book() {
     # Open some book in the book folder. Location: ~/books
     # If single author: "first three letters of name"+"last two digits of year". If two or more authors: "initial letters of authors"+"last two digits of year".
-    okular /home/pedro//refs/books/$1.* & exit;
+    okular /home/pedro//refs/books/$1* & exit;
 }
 
 notes() {
     # Open some lelcture notes in the notes folder. Location: ~/notes
     # If single author: "first three letters of name"+"last two digits of year". If two or more authors: "initial letters of authors"+"last two digits of year".
-    okular /home/pedro/refs/notes/$1.* & exit;
+    okular /home/pedro/refs/notes/$1* & exit;
 }
 
 paper() {
     # Open some paper in the paper folder. Location: ~/papers
     # If single author: "first three letters of name"+"last two digits of year". If two or more authors: "initial letters of authors"+"last two digits of year".
-    okular /home/pedro/refs/papers/$1.* & exit;
+    okular /home/pedro/refs/papers/$1* & exit;
 }
