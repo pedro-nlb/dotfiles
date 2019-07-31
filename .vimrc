@@ -32,7 +32,7 @@ set softtabstop=4
 " Compile
 nnoremap <F2> <Esc> :w <bar> :! latexmk -pdf main.tex & <CR>
 inoremap <F2> <Esc> :w <bar> :! latexmk -pdf main.tex & <CR>
-vnoremap <F2> <Esc> :w <bar> :! latexmk -pdf main.tex & <CR>
+" vnoremap <F2> <Esc> :w <bar> :! latexmk -pdf main.tex & <CR>
 " Compile and open pdf
 nnoremap <F5> <Esc> :w <bar> :! latexmk -pdf main.tex && okular main.pdf & <CR>
 inoremap <F5> <Esc> :w <bar> :! latexmk -pdf main.tex && okular main.pdf & <CR>
