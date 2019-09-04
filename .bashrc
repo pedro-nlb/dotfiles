@@ -21,37 +21,48 @@ export VISUAL="vim"
 pushdots() {
     # Push the changes in the local dotfiles to GitHub
     # The parameters are used as commit message
-    cd /home/pedro/git/dotfiles;
+    cd ~/git/dotfiles;
     git add .;
     git commit -m "$*";
     git push origin master;
     cd;
 }
 
-pushma() {
-    # Push the progress on the thesis
+pushff() {
+    # Push the progress on the Fano fibrations article
     # The parameters are used as commit message
-    cd /home/pedro/git/thesis;
+    cd ~/git/sodff;
     git add .;
     git commit -m "$*";
     git push origin master;
     cd;
 }
+
+pushbchm1() {
+    # Push the progress on BCHM for curves
+    # The parameters are used as commit message
+    cd ~/git/bchm1;
+    git add .;
+    git commit gm "$*";
+    git push origin master;
+    cd;
+}
+
 
 book() {
     # Open some book in the book folder. Location: ~/books
     # If single author: "first three letters of name"+"last two digits of year". If two or more authors: "initial letters of authors"+"last two digits of year".
-    okular /home/pedro//refs/books/$1* & exit;
+    okular ~/refs/books/$1* & exit;
 }
 
 notes() {
     # Open some lelcture notes in the notes folder. Location: ~/notes
     # If single author: "first three letters of name"+"last two digits of year". If two or more authors: "initial letters of authors"+"last two digits of year".
-    okular /home/pedro/refs/notes/$1* & exit;
+    okular ~/refs/notes/$1* & exit;
 }
 
 paper() {
     # Open some paper in the paper folder. Location: ~/papers
     # If single author: "first three letters of name"+"last two digits of year". If two or more authors: "initial letters of authors"+"last two digits of year".
-    okular /home/pedro/refs/papers/$1* & exit;
+    okular ~/refs/papers/$1* & exit;
 }
