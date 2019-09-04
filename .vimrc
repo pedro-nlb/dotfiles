@@ -44,17 +44,17 @@ noremap j gj
 noremap k gk
 noremap <Up> gk
 noremap <Down> gj
-inoremap ö {
-inoremap ä }
-inoremap ü ^
-inoremap # \
-inoremap § # 
+"inoremap ö {
+"inoremap ä }
+"inoremap ü ^
+"inoremap # \
+"inoremap § # 
 "inoremap ö begin
 "inoremap ä end
 "inoremap ü tikzcd
 "inoremap ’ #
-inoremap ø }
-inoremap → {
-inoremap þ ^
+"inoremap ø }
+"inoremap → {
+"inoremap þ ^
 
 au BufReadPost *.tex set syntax=tex

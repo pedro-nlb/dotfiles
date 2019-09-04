@@ -1,7 +1,8 @@
 #!/bin/sh
 
-xrdb -merge ~/.Xresources
+xrdb -load ~/.Xresources
 sh ~/.fehbg
+export LC_ALL=C
 exec i3
 
 userresources=$HOME/.Xresources
