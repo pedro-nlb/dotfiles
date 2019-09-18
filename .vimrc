@@ -60,6 +60,6 @@ inoremap ` \
 inoremap @ ^
 inoremap ~ _
 inoremap £ @
-inoremap € ~ 
+inoremap € ~
 
 au BufReadPost *.tex set syntax=tex

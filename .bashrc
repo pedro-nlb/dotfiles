@@ -28,6 +28,24 @@ pushdots() {
     cd;
 }
 
+pushtemplates() {
+    # Push the changes on templates
+    # The parameters are used as commit message
+    cd ~/git/templates;
+    git add .;
+    git commit -m "$*";
+    git push origin master;
+    cd;
+}
+
+new() {
+    # Create a new latex document with the corresponding git repository
+    # First parameter for the document class
+    # Second parameter for the name of the folder and the repository
+    cd ~/git;
+    cd;
+}
+
 pushff() {
     # Push the progress on the Fano fibrations article
     # The parameters are used as commit message
@@ -47,7 +65,6 @@ pushbchm1() {
     git push origin master;
     cd;
 }
-
 
 book() {
     # Open some book in the book folder. Location: ~/books
