@@ -57,9 +57,10 @@ noremap <Down> gj
 "inoremap → {
 "inoremap þ ^
 inoremap ` \
+inoremap ¬ \
 inoremap @ ^
 inoremap ~ _
 inoremap £ @
-inoremap € ~ 
+inoremap € ~
 
 au BufReadPost *.tex set syntax=tex
