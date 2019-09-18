@@ -5,6 +5,7 @@ alias off="poweroff";
 alias pulldots="cd ~/git/dotfiles; git pull upstream master; cd; xrdb ~/.Xresources";
 alias pullbchm1="cd ~/git/bchm1; git pull upstream master; cd";
 alias pullsodff="cd ~/git/sodff; git pull upstream master; cd";
+alias pulltemplates="cd ~/git/templates; git pull upstream master; cd";
 alias sodff="cd ~/git/sodff; vim main.tex";
 alias bchm1="cd ~/git/bchm1; vim main.tex";
 alias b="book";
