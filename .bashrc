@@ -43,6 +43,17 @@ new() {
     # First parameter for the document class
     # Second parameter for the name of the folder and the repository
     cd ~/git;
+    mkdir $2;
+    cd $2;
+    touch README.md;
+    cp ~/git/templates/article/main.tex main.tex;
+    cp ~/git/templates/refs.bib refs.bib;
+    hub init -g;
+    git add .;
+    git commit -m "first commit";
+    hub create -p pedro-nlb/$2;
+    git remote add upstream https://github.com/pedro-nlb/$2.git;
+    git push origin master;
     cd;
 }
 
@@ -83,3 +94,5 @@ paper() {
     # If single author: "first three letters of name"+"last two digits of year". If two or more authors: "initial letters of authors"+"last two digits of year".
     okular ~/refs/papers/$1* & exit;
 }
+
+export PATH="/home/pedro/bin:$PATH"
