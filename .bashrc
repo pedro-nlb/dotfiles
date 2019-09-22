@@ -57,22 +57,22 @@ new() {
     cd;
 }
 
-pushff() {
-    # Push the progress on the Fano fibrations article
+pushldiff() {
+    # Push the progress on the log differential notes
     # The parameters are used as commit message
-    cd ~/git/sodff;
+    cd ~/git/ldiff;
     git add .;
     git commit -m "$*";
     git push origin master;
     cd;
 }
 
-pushbchm1() {
-    # Push the progress on BCHM for curves
+pushff() {
+    # Push the progress on the Fano fibrations article
     # The parameters are used as commit message
-    cd ~/git/bchm1;
+    cd ~/git/sodff;
     git add .;
-    git commit gm "$*";
+    git commit -m "$*";
     git push origin master;
     cd;
 }
