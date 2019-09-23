@@ -47,12 +47,13 @@ new() {
     cd $2;
     touch README.md;
     cp ~/git/templates/$1/main.tex main.tex;
-    cp ~/git/templates/refs.bib refs.bib;
+    ln -s ~/git/templates/refs.bib refs.bib;
     git init;
     git add .;
     git commit -m "first commit";
     hub create -p pedro-nlb/$2;
     git remote set-url origin https://github.com/pedro-nlb/$2.git;
+    git remote add upstream https://github.com/pedro-nlb/$2.git;
     git push origin master;
     cd;
 }

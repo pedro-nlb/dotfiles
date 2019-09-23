@@ -6,6 +6,7 @@ alias pulldots="cd ~/git/dotfiles; git pull upstream master; cd; xrdb ~/.Xresour
 alias pulltemplates="cd ~/git/templates; git pull upstream master; cd";
 alias pullldiff="cd ~/git/ldiff; git pull upstream master; cd";
 alias pullsodff="cd ~/git/sodff; git pull upstream master; cd";
+alias refs="vim ~/git/templates/refs.bib; pushtemplates updated references;";
 alias ldiff="cd ~/git/ldiff; vim main.tex";
 alias sodff="cd ~/git/sodff; vim main.tex";
 alias b="book";
