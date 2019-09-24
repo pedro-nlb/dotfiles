@@ -68,6 +68,16 @@ pushldiff() {
     cd;
 }
 
+pushgd() {
+    # Push the progress on the Grothendieck Duality seminar
+    # The parameters are used as commit message
+    cd ~/git/gd;
+    git add .;
+    git commit -m "$*";
+    git push origin master;
+    cd;
+}
+
 pushff() {
     # Push the progress on the Fano fibrations article
     # The parameters are used as commit message
