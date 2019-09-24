@@ -15,3 +15,4 @@ alias b="book";
 alias n="notes";
 alias p="paper";
 alias pkglsup="pacman -Qqe > ~/Docs/pkglist.txt";
+alias pullattempt1="cd ~/git/attempt1; git pull upstream master; cd";
