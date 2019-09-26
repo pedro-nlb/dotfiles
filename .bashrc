@@ -59,16 +59,17 @@ new() {
     echo "alias pull$2=\"cd ~/git/$2; git pull upstream master; cd\";" >> .bash_aliases;
     echo "alias $2=\"cd ~/git/$2; vim main.tex\";"
     echo "push$2() {
-	# Push the progress on $2
-	# The parameters are used as commit message
-	cd ~/git/$2;
-	git add.;
-	git commit -m \"\$*\";
-	git push origin master;
-	cd;
+    # Push the progress on $2
+    # The parameters are used as commit message
+    cd ~/git/$2;
+    git add.;
+    git commit -m \"\$*\";
+    git push origin master;
+    cd;
     }
     " >> .bashrc;
     pushdots Added new $1: $2;
+    source .bashrc .bash_aliases;
 }
 
 pushldiff() {
@@ -119,14 +120,3 @@ paper() {
     okular ~/refs/papers/$1* & exit;
 }
 
-
-pushattempt1() {
-	# Push the progress on attempt1
-	# The parameters are used as commit message
-	cd ~/git/attempt1;
-	git add.;
-	git commit -m "$*";
-	git push origin master;
-	cd;
-    }
-    
