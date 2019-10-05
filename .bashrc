@@ -79,11 +79,9 @@ new() {
     git commit -m "First commit";
     hub create -p $GITHUBUERNAME/$2;
     git remote set-url origin https://github.com/$GITHUBUSERNAME/$2.git;
-    git remote add upstream https://github.com/$GITHUBUSERNAME/$2.git;
     git push origin master;
     cd;
     echo "alias $2=\"cd ~/git/$2; vim main.tex\";" >> .bash_aliases;
-    push dotfiles Added new alias for the new $1 named $2;
     source .bash_aliases;
 }
 
