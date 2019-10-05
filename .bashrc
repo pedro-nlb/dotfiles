@@ -27,7 +27,7 @@ push() {
     # First argument is the name of the repository
     # If no arguments, then dotfiles will be the default repository
     # Remaining arguments are used as a commit message
-    # If exactly one argument, "Some updates" will be the default commit message
+    # If at most one argument, "Some updates" will be the default commit message
     if [ $# = 0 ]; then
 	cd ~/git/dotfiles;
 	git add .;
@@ -54,7 +54,7 @@ pull() {
     # First argument is the name of the repository
     # If no arguments, then dotfiles will be the default repository
     if [ $# = 0 ]; then
-	cd ~/git;dotfiles;
+	cd ~/git/dotfiles;
 	git pull upstream master;
 	cd;
     else
@@ -67,7 +67,7 @@ pull() {
 new() {
     # Create a new latex document with the corresponding git repository
     # First argument is the name of the template
-    # Second parameter is the name of the new folder and repository
+    # Second argument is the name of the new folder and repository
     cd ~/git;
     mkdir $2;
     cd $2;
@@ -88,19 +88,22 @@ new() {
 }
 
 b() {
-    # Open some book in the book folder. Location: ~/books
-    # If single author: "first three letters of name"+"last two digits of year". If two or more authors: "initial letters of authors"+"last two digits of year".
+    # Open some book in the book folder
+    # If single author: "first three letters of name"+"last two digits of year"
+    # If two or more authors: "initial letters of authors"+"last two digits of year"
     okular ~/refs/books/$1* & exit;
 }
 
 n() {
-    # Open some lelcture notes in the notes folder. Location: ~/notes
-    # If single author: "first three letters of name"+"last two digits of year". If two or more authors: "initial letters of authors"+"last two digits of year".
+    # Open some lelcture notes in the notes folder
+    # If single author: "first three letters of name"+"last two digits of year"
+    # If two or more authors: "initial letters of authors"+"last two digits of year"
     okular ~/refs/notes/$1* & exit;
 }
 
 p() {
-    # Open some paper in the paper folder. Location: ~/papers
-    # If single author: "first three letters of name"+"last two digits of year". If two or more authors: "initial letters of authors"+"last two digits of year".
+    # Open some paper in the paper folder
+    # If single author: "first three letters of name"+"last two digits of year"
+    # If two or more authors: "initial letters of authors"+"last two digits of year"
     okular ~/refs/papers/$1* & exit;
 }

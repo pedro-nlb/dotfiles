@@ -7,4 +7,3 @@ alias refs="vim ~/git/templates/refs.bib; pushtemplates updated references;";
 alias ldiff="cd ~/git/ldiff; vim main.tex";
 alias gd="cd ~/git/gd; vim main.tex";
 alias sodff="cd ~/git/sodff; vim main.tex";
-alias hpup="scp /home/pedro/homepage/index.html pn1018@login.uni-freiburg.de:/home/omnibus/pn1018/public_html/index.html";
