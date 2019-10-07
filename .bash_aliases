@@ -7,3 +7,4 @@ alias refs="vim ~/git/templates/refs.bib; pushtemplates updated references;";
 alias ldiff="cd ~/git/ldiff; vim main.tex";
 alias gd="cd ~/git/gd; vim main.tex";
 alias sodff="cd ~/git/sodff; vim main.tex";
+alias cag="cd ~/git/cag; vim main.tex";
