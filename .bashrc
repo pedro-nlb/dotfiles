@@ -43,9 +43,8 @@ push() {
     else
 	cd ~/git/$1;
 	git add .;
-	echo "${*:2}";
 	git commit -m "${*:2}";
-	#git push origin master;
+	git push origin master;
 	cd;
     fi
 }
