@@ -8,3 +8,4 @@ alias ldiff="cd ~/git/ldiff; vim main.tex";
 alias gd="cd ~/git/gd; vim main.tex";
 alias sodff="cd ~/git/sodff; vim main.tex";
 alias cag="cd ~/git/cag; vim main.tex";
+alias orb="cd ~/git/orb; vim main.tex";
