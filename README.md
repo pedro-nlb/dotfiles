@@ -29,13 +29,15 @@ git config --global core.editor vim
 git config --global merge.tool vimdiff
 ```
 
+It is also useful to use an SSH key to connect to GitHub, that way you don't need to enter your username and password everytime you pull/push. See [this guide](https://help.github.com/en/articles/connecting-to-github-with-ssh).
+
 
 ### Initial setup
 
 Open a new terminal window. It should open by default in your home folder. To make sure this is the case, run the command `pwd`. The output should be
 
 ```
-/home/yourusername
+/home/username
 ```
 
 To see your dotfiles, run `ls -a`. Create a folder to backup your current dotfiles, e.g. run `mkdir old_dotfiles`. Move the files that you want to replace by files from this repository to this folder. In our example we would run
@@ -51,19 +53,17 @@ mkdir git
 cd git
 ```
 
-From GitHub, copy the clone URL of this repository, say https://github.com/username/dotfiles.git, and in the terminal run
+Fork this repository on GitHub (if you are not me) and then run in the terminal
 
 ```
-git clone https://github.com/username/dotfiles.git
-cd dotfiles
-git remote add upstream https://github.com/username/dotfiles.git
+git clone git@github.com/username/dotfiles.git
 ```
 
 Finally create the corresponding [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link). In our example we would run
 
 ```
-ln -s /home/user/git/dotfiles/.bashrc /home/user/.bashrc
-ln -s /home/user/git/dotfiles/.vimrc /home/user/.vimrc
+ln -s /home/username/git/dotfiles/.bashrc /home/user/.bashrc
+ln -s /home/username/git/dotfiles/.vimrc /home/user/.vimrc
 ```
 
 ### Pull changes from GitHub
@@ -71,19 +71,19 @@ ln -s /home/user/git/dotfiles/.vimrc /home/user/.vimrc
 Open a new terminal window. Change the current directory to the directory of the local repository. In our example, run
 
 ```
-cd /home/user/git/dotfiles
+cd /home/username/git/dotfiles
 ```
 
 Then pull the changes from GitHub by running the command
 
 ```
-git pull upstream master
+git pull origin master
 ```
 
-**Shortcut**: if *.bash_aliases* is one of the files that is taken from this repository, it is enough to run
+**Shortcut**: if *.bashrc* is one of the files that is taken from this repository, it is enough to run
 
 ```
-pulldots
+pull
 ```
 
 ### Push changes to GitHub
@@ -91,7 +91,7 @@ pulldots
 Open a new terminal window. Change the current directory to the directory of the local repository. In our example, run
 
 ```
-cd /home/user/git/dotfiles
+cd /home/username/git/dotfiles
 ```
 
 Then add, commit and push the local changes to GitHub by running the commands
@@ -105,5 +105,5 @@ git push origin master
 **Shortcut**: if *.bashrc* is one of the files that is taken from this repository, it is enough to run
 
 ```
-pushdots "Commit message, e.g. updated .bashrc"
+push "Commit message, e.g. updated .bashrc"
 ```
