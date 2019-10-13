@@ -56,7 +56,7 @@ cd git
 Fork this repository on GitHub (if you are not me) and then run in the terminal
 
 ```
-git clone git@github.com/username/dotfiles.git
+git clone git@github.com:/username/dotfiles.git
 ```
 
 Finally create the corresponding [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link). In our example we would run
