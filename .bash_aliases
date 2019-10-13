@@ -2,6 +2,7 @@ alias xup="xrdb ~/.Xresources";
 alias confi3="vim ~/.config/i3/config";
 alias pkglsup="pacman -Qqe > ~/Docs/pkglist.txt";
 alias uni="ssh pedro@login.mathematik.uni-freiburg.de";
+alias unirefs="cd; scp -r pedro@login.mathematik.uni-freiburg.de:/home/pedro/refs refs;";
 alias x="exit";
 alias off="poweroff";
 alias refs="vim ~/git/templates/refs.bib; pushtemplates updated references;";
