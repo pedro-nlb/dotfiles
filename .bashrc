@@ -55,11 +55,11 @@ pull() {
     # If no arguments, then dotfiles will be the default repository
     if [ $# = 0 ]; then
 	cd ~/git/dotfiles;
-	git pull upstream master;
+	git pull origin master;
 	cd;
     else
 	cd ~/git/$1;
-	git pull upstream master;
+	git pull origin master;
 	cd;
     fi
 }
