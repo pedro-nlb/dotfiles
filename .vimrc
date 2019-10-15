@@ -37,6 +37,10 @@ vnoremap <F2> <Esc> :w <bar> :! latexmk -pdf main.tex & <CR>
 nnoremap <F5> <Esc> :w <bar> :! latexmk -pdf main.tex && okular main.pdf & <CR>
 inoremap <F5> <Esc> :w <bar> :! latexmk -pdf main.tex && okular main.pdf & <CR>
 vnoremap <F5> <Esc> :w <bar> :! latexmk -pdf main.tex && okular main.pdf & <CR>
+" Compile and open pdf on the tablet
+nnoremap <F6> <Esc> :w <bar> :! latexmk -pdf main.tex && termux-open main.pdf & <CR>
+inoremap <F6> <Esc> :w <bar> :! latexmk -pdf main.tex && termux-open main.pdf & <CR>
+vnoremap <F6> <Esc> :w <bar> :! latexmk -pdf main.tex && termux-open main.pdf & <CR>
 "inoremap <F5> <Esc> :w <bar> :! pdflatex % <CR>
 "inoremap <F5> <Esc> :w <bar> :! pdflatex % && okular %:t:r.pdf <CR>
 nnoremap <C-L> :nohl<CR><C-L>
