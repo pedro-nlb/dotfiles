@@ -12,7 +12,3 @@ alias sodff="cd ~/git/sodff; vim main.tex";
 alias cag="cd ~/git/cag; vim main.tex";
 alias orb="cd ~/git/orb; vim main.tex";
 alias notes="cd ~/git/notes; vim main.tex";
-<<<<<<< HEAD
-=======
-alias notes="cd ~/git/notes; vim main.tex";
->>>>>>> 09b4bf1996c784446906808377502a6298acaff9
