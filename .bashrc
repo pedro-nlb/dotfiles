@@ -37,7 +37,6 @@ push() {
     elif [ $# = 1 ]; then
 	cd ~/git/$1;
 	git add .;
-	git reset -- main.aux main.bbl main.blg main.fdb_latexmk main.fls main.out main.toc;
 	git commit -m "Some updates";
 	git push origin master;
 	cd;
