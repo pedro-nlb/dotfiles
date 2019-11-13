@@ -74,6 +74,7 @@ new() {
     touch README.md;
     cp ~/git/templates/$1/main.tex main.tex;
     ln -s ~/git/templates/refs.bib refs.bib;
+    ln -s ~/git/templates/preamble.tex preamble.tex;
     git init;
     git add .;
     git commit -m "First commit";
