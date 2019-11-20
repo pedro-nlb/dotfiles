@@ -13,3 +13,4 @@ alias sodff="cd ~/git/sodff; vim main.tex";
 alias orb="cd ~/git/orb; vim main.tex";
 alias notes="cd ~/git/notes; vim main.tex";
 alias sod="cd ~/git/sod; vim main.tex";
+alias logspaces="cd ~/git/logspaces; vim main.tex";
