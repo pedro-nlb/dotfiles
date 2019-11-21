@@ -58,7 +58,7 @@ noremap <Down> gj
 "inoremap ø }
 "inoremap → {
 "inoremap þ ^
-inoremap | `
+inoremap ¹ `
 inoremap ` \
 inoremap ¬ \
 inoremap @ ^
