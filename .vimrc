@@ -45,6 +45,8 @@ vnoremap <F6> <Esc>:w<CR>:! latexmk -pdf main.tex<CR>:! termux-open main.pdf &<C
 nnoremap <C-L> :nohl<CR><C-L>
 " Clean auxiliary files
 nnoremap <F10> <Esc>:w<CR>:! latexmk -c<CR>
+inoremap <F10> <Esc>:w<CR>:! latexmk -c<CR>
+vnoremap <F10> <Esc>:w<CR>:! latexmk -c<CR>
 " Special keys
 noremap j gj
 noremap k gk
