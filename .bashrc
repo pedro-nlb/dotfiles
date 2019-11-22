@@ -36,14 +36,18 @@ push() {
 	cd;
     elif [ $# = 1 ]; then
 	cd ~/git/$1;
-	latexmk -c;
+	if [ -f main.aux ]; then
+	    latexmk -c;
+	fi
 	git add .;
 	git commit -m "Some updates";
 	git push origin master;
 	cd;
     else
 	cd ~/git/$1;
-	latexmk -c;
+	if [ -f main.aux ]; then
+	    latexmk -c;
+	fi
 	git add .;
 	git commit -m "${*:2}";
 	git push origin master;
