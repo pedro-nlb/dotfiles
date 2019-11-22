@@ -30,17 +30,17 @@ set softtabstop=4
 " Key mappings
 "nnoremap <F5> <Esc> :w <bar> :! pdflatex % <CR>
 " Compile
-nnoremap <F2> <Esc>:w<CR> :! latexmk -pdf main.tex && latexmk -c<CR>
-inoremap <F2> <Esc>:w<CR> :! latexmk -pdf main.tex && latexmk -c<CR>
-vnoremap <F2> <Esc>:w<CR> :! latexmk -pdf main.tex && latexmk -c<CR>
+nnoremap <F2> <Esc>:w<CR> :! latexmk -pdf main.tex<CR>
+inoremap <F2> <Esc>:w<CR> :! latexmk -pdf main.tex<CR>
+vnoremap <F2> <Esc>:w<CR> :! latexmk -pdf main.tex<CR>
 " Compile and open pdf
-nnoremap <F5> <Esc>:w<CR>:! latexmk -pdf main.tex && latexmk -c<CR>:! okular main.pdf &<CR>
-inoremap <F5> <Esc>:w<CR>:! latexmk -pdf main.tex && latexmk -c<CR>:! okular main.pdf &<CR>
-vnoremap <F5> <Esc>:w<CR>:! latexmk -pdf main.tex && latexmk -c<CR>:! okular main.pdf &<CR>
+nnoremap <F5> <Esc>:w<CR>:! latexmk -pdf main.tex<CR>:! okular main.pdf &<CR>
+inoremap <F5> <Esc>:w<CR>:! latexmk -pdf main.tex<CR>:! okular main.pdf &<CR>
+vnoremap <F5> <Esc>:w<CR>:! latexmk -pdf main.tex<CR>:! okular main.pdf &<CR>
 " Compile and open pdf on the tablet
-nnoremap <F6> <Esc>:w<CR>:! latexmk -pdf main.tex && latexmk -c<CR>:! termux-open main.pdf &<CR>
-inoremap <F6> <Esc>:w<CR>:! latexmk -pdf main.tex && latexmk -c<CR>:! termux-open main.pdf &<CR>
-vnoremap <F6> <Esc>:w<CR>:! latexmk -pdf main.tex && latexmk -c<CR>:! termux-open main.pdf &<CR>
+nnoremap <F6> <Esc>:w<CR>:! latexmk -pdf main.tex<CR>:! termux-open main.pdf &<CR>
+inoremap <F6> <Esc>:w<CR>:! latexmk -pdf main.tex<CR>:! termux-open main.pdf &<CR>
+vnoremap <F6> <Esc>:w<CR>:! latexmk -pdf main.tex<CR>:! termux-open main.pdf &<CR>
 nnoremap <C-L> :nohl<CR><C-L>
 noremap j gj
 noremap k gk
