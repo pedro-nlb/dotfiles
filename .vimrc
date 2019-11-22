@@ -41,7 +41,11 @@ vnoremap <F5> <Esc>:w<CR>:! latexmk -pdf main.tex<CR>:! okular main.pdf &<CR>
 nnoremap <F6> <Esc>:w<CR>:! latexmk -pdf main.tex<CR>:! termux-open main.pdf &<CR>
 inoremap <F6> <Esc>:w<CR>:! latexmk -pdf main.tex<CR>:! termux-open main.pdf &<CR>
 vnoremap <F6> <Esc>:w<CR>:! latexmk -pdf main.tex<CR>:! termux-open main.pdf &<CR>
+" Clear search result
 nnoremap <C-L> :nohl<CR><C-L>
+" Clean auxiliary files
+nnoremap <F10> <Esc>:w<CR>:! latexmk -c<CR>
+" Special keys
 noremap j gj
 noremap k gk
 noremap <Up> gk
