@@ -19,6 +19,7 @@ export VISUAL="vim"
 # Variables
 
 GITHUBUSERNAME=pedro-nlb
+TEXMFHOME=/home/pedro/texmf/
 
 # Functions
 

@@ -15,3 +15,4 @@ alias orb="cd ~/git/orb; vim main.tex";
 alias notes="cd ~/git/notes; vim main.tex";
 alias sod="cd ~/git/sod; vim main.tex";
 alias chinese="okular /home/pedro/Documents/Chinese/Lehrbuch.pdf & exit";
+alias dcats="cd ~/git/dcats; vim main.tex";
