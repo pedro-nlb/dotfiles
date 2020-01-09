@@ -41,8 +41,6 @@ push() {
 	    echo "There are submodules!"
 	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
 		# There seem to be git submodules
-		echo "Actualizing HEADs of submodules...";
-		git submodule foreach --recursive git checkout master;
 		echo "Adding changes on submodules...";
 		git submodule foreach --recursive git add .;
 		echo "Committing changes on submodules...";
@@ -67,8 +65,6 @@ push() {
 	    echo "There are submodules!"
 	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
 		# There seem to be git submodules
-		echo "Actualizing HEADs of submodules...";
-		git submodule foreach --recursive git checkout master;
 		echo "Adding changes on submodules...";
 		git submodule foreach --recursive git add .;
 		echo "Committing changes on submodules...";
@@ -93,8 +89,6 @@ push() {
 	    echo "There are submodules!"
 	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
 		# There seem to be git submodules
-		echo "Actualizing HEADs of submodules...";
-		git submodule foreach --recursive git checkout master;
 		echo "Adding changes on submodules...";
 		git submodule foreach --recursive git add .;
 		echo "Committing changes on submodules...";
