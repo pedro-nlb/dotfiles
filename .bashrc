@@ -37,6 +37,7 @@ push() {
 	git commit -m "Some updates";
 	git push origin master;
 	if [ -d "$HOME/git/$1/.git/modules" ]; then
+	    echo "There are submodules!"
 	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
 		# There seem to be git submodules
 		git submodule foreach --recursive git checkout master;
