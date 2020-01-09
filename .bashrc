@@ -39,9 +39,10 @@ push() {
 	if [ -d "$HOME/git/$1/.git/modules" ]; then
 	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
 		# There seem to be git submodules
-		git submodule foreach git add .;
-		git submodule foreach git commit -m "Some updates. Made from repository dotfiles";
-		git submodule foreach git push origin master;
+		git submodule foreach --recursive git checkout master;
+		git submodule foreach --recursive git add .;
+		git submodule foreach --recursive git commit -m "Some updates. Made from repository dotfiles";
+		git submodule foreach --recursive git push origin master;
 	    fi
 	fi
 	cd;
@@ -56,9 +57,10 @@ push() {
 	if [ -d "$HOME/git/$1/.git/modules" ]; then
 	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
 		# There seem to be git submodules
-		git submodule foreach git add .;
-		git submodule foreach git commit -m "Some updates. Made from repository $1";
-		git submodule foreach git push origin master;
+		git submodule foreach --recursive git checkout master;
+		git submodule foreach --recursive git add .;
+		git submodule foreach --recursive git commit -m "Some updates. Made from repository $1";
+		git submodule foreach --recursive git push origin master;
 	    fi
 	fi
 	cd;
@@ -73,9 +75,10 @@ push() {
 	if [ -d "$HOME/git/$1/.git/modules" ]; then
 	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
 		# There seem to be git submodules
-		    git submodule foreach git add .;
-		    git submodule foreach git commit -m "${*:2}. Made from repository $1";
-		    git submodule foreach git push origin master;
+		git submodule foreach --recursive git checkout master;
+		git submodule foreach --recursive git add .;
+		git submodule foreach --recursive git commit -m "${*:2}. Made from repository $1";
+		git submodule foreach --recursive git push origin master;
 	    fi
 	fi
 	cd;
