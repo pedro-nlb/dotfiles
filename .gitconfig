@@ -1,7 +1,11 @@
 [user]
-	name = Pedro
+	name = pedro
 	email = pedro.nz.lb@gmail.com
 [core]
 	editor = vim
 [merge]
 	tool = vimdiff
+[alias]
+	update = !git pull && git submodule update --init --recursive
+[push]
+	recurseSubmodules = on-demand
