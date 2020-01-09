@@ -33,27 +33,27 @@ push() {
 	# If at most one argument, "Some updates" will be the default commit message
     if [ $# = 0 ]; then
 	cd ~/git/dotfiles;
-	git add .;
-	git commit -m "Some updates";
-	git push origin master;
+	git submodule foreach git add .;
+	git submodule foreach git commit -m "Some updates";
+	git submodule foreach git push origin master;
 	cd;
     elif [ $# = 1 ]; then
 	cd ~/git/$1;
 	if [ -f main.aux ]; then
 	    latexmk -c;
 	fi
-	git add .;
-	git commit -m "Some updates";
-	git push origin master;
+	git submodule foreach git add .;
+	git submodule foreach git commit -m "Some updates";
+	git submodule foreach git push origin master;
 	cd;
     else
 	cd ~/git/$1;
 	if [ -f main.aux ]; then
 	    latexmk -c;
 	fi
-	git add .;
-	git commit -m "${*:2}";
-	git push origin master;
+	git submodule foreach git add .;
+	git submodule foreach git commit -m "${*:2}";
+	git submodule foreach git push origin master;
 	cd;
     fi
 }
