@@ -97,12 +97,22 @@ pull() {
     if [ $# = 0 ]; then
 	cd ~/git/dotfiles;
 	git pull origin master;
-	git submodule foreach git pull origin master;
+	if [ -d "$HOME/git/$1/.git/modules" ]; then
+	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
+		# There seem to be git submodules
+		git submodule foreach git pull origin master;
+	    fi
+	fi
 	cd;
     else
 	cd ~/git/$1;
 	git pull origin master;
-	git submodule foreach git pull origin master;
+	if [ -d "$HOME/git/$1/.git/modules" ]; then
+	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
+		# There seem to be git submodules
+		git submodule foreach git pull origin master;
+	    fi
+	fi
 	cd;
     fi
 }
