@@ -24,11 +24,13 @@ TEXMFHOME=/home/pedro/texmf/
 # Functions
 
 push() {
-    # Push local changes on a repository to GitHub
+    # Push local changes on a repository to GitHub using
+	# If working with submodules, use the recurseSubmodules config option
+	# For this it suffices to run git config --global push.recurseSubmodules on-demand once and for all
     # First argument is the name of the repository
-    # If no arguments, then dotfiles will be the default repository
+	# If no arguments, then dotfiles will be the default repository
     # Remaining arguments are used as a commit message
-    # If at most one argument, "Some updates" will be the default commit message
+	# If at most one argument, "Some updates" will be the default commit message
     if [ $# = 0 ]; then
 	cd ~/git/dotfiles;
 	git add .;
@@ -58,15 +60,19 @@ push() {
 
 pull() {
     # Pull changes from GitHub to your local folder
+	# If working with submodules, define a git alias to pull and update submodules all at once
+	# For this it suffices to run git config --global alias.update '!git pull && git submodule update --init --recursive' once and for all
     # First argument is the name of the repository
-    # If no arguments, then dotfiles will be the default repository
+	# If no arguments, then dotfiles will be the default repository
     if [ $# = 0 ]; then
 	cd ~/git/dotfiles;
 	git pull origin master;
+	git submodule foreach git pull origin master;
 	cd;
     else
 	cd ~/git/$1;
 	git pull origin master;
+	git submodule foreach git pull origin master;
 	cd;
     fi
 }

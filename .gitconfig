@@ -6,6 +6,6 @@
 [merge]
 	tool = vimdiff
 [alias]
-	update = !git pull && git submodule update --init --recursive
+	update = !git pull origin master && git submodule update --init --recursive
 [push]
 	recurseSubmodules = on-demand
