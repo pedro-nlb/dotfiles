@@ -78,6 +78,8 @@ push() {
 		git submodule foreach --recursive git checkout master;
 		git submodule foreach --recursive git add .;
 		git submodule foreach --recursive git commit -m "${*:2}. Made from repository $1";
+		# An error seems to occur at this point for the first submodule (alphabetic order, it seems):
+		# fatal: run_command returned non-zero status for submodule
 		git submodule foreach --recursive git push origin master;
 	    fi
 	fi
