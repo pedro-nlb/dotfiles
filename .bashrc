@@ -32,25 +32,35 @@ push() {
     # Remaining arguments are used as a commit message
 	# If at most one argument, "Some updates" will be the default commit message
     if [ $# = 0 ]; then
-	cd ~/git/dotfiles;
+	cd $HOME/git/dotfiles;
 	git add .;
 	git commit -m "Some updates";
 	git push origin master;
-	git submodule foreach git add .;
-	git submodule foreach git commit -m "Some updates. Made from repository dotfiles";
-	git submodule foreach git push origin master;
+	if [ -d "$HOME/git/$1/.git/modules" ]; then
+	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
+		# There seem to be git submodules
+		git submodule foreach git add .;
+		git submodule foreach git commit -m "Some updates. Made from repository dotfiles";
+		git submodule foreach git push origin master;
+	    fi
+	fi
 	cd;
     elif [ $# = 1 ]; then
-	cd ~/git/$1;
+	cd $HOME/git/$1;
 	if [ -f main.aux ]; then
 	    latexmk -c;
 	fi
 	git add .;
 	git commit -m "Some updates";
 	git push origin master;
-	git submodule foreach git add .;
-	git submodule foreach git commit -m "Some updates. Made from repository $1";
-	git submodule foreach git push origin master;
+	if [ -d "$HOME/git/$1/.git/modules" ]; then
+	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
+		# There seem to be git submodules
+		git submodule foreach git add .;
+		git submodule foreach git commit -m "Some updates. Made from repository $1";
+		git submodule foreach git push origin master;
+	    fi
+	fi
 	cd;
     else
 	cd ~/git/$1;
@@ -60,9 +70,14 @@ push() {
 	git add .;
 	git commit -m "${*:2}";
 	git push origin master;
-	git submodule foreach git add .;
-	git submodule foreach git commit -m "${*:2}. Made from repository $1";
-	git submodule foreach git push origin master;
+	if [ -d "$HOME/git/$1/.git/modules" ]; then
+	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
+		# There seem to be git submodules
+		    git submodule foreach git add .;
+		    git submodule foreach git commit -m "${*:2}. Made from repository $1";
+		    git submodule foreach git push origin master;
+	    fi
+	fi
 	cd;
     fi
 }
