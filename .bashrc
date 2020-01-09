@@ -40,9 +40,15 @@ push() {
 	    echo "There are submodules!"
 	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
 		# There seem to be git submodules
+		echo "Actualizing HEADs of submodules...";
 		git submodule foreach --recursive git checkout master;
+		echo "Adding changes on submodules...";
 		git submodule foreach --recursive git add .;
+		echo "Committing changes on submodules...";
 		git submodule foreach --recursive git commit -m "Some updates. Made from repository dotfiles";
+		# An error seems to occur at this point for the first submodule (alphabetic order, it seems):
+		# fatal: run_command returned non-zero status for submodule
+		echo "Pushing changes on submodules...";
 		git submodule foreach --recursive git push origin master;
 	    fi
 	fi
@@ -56,11 +62,18 @@ push() {
 	git commit -m "Some updates";
 	git push origin master;
 	if [ -d "$HOME/git/$1/.git/modules" ]; then
+	    echo "There are submodules!"
 	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
 		# There seem to be git submodules
+		echo "Actualizing HEADs of submodules...";
 		git submodule foreach --recursive git checkout master;
+		echo "Adding changes on submodules...";
 		git submodule foreach --recursive git add .;
+		echo "Committing changes on submodules...";
 		git submodule foreach --recursive git commit -m "Some updates. Made from repository $1";
+		# An error seems to occur at this point for the first submodule (alphabetic order, it seems):
+		# fatal: run_command returned non-zero status for submodule
+		echo "Pushing changes on submodules...";
 		git submodule foreach --recursive git push origin master;
 	    fi
 	fi
@@ -74,13 +87,18 @@ push() {
 	git commit -m "${*:2}";
 	git push origin master;
 	if [ -d "$HOME/git/$1/.git/modules" ]; then
+	    echo "There are submodules!"
 	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
 		# There seem to be git submodules
+		echo "Actualizing HEADs of submodules...";
 		git submodule foreach --recursive git checkout master;
+		echo "Adding changes on submodules...";
 		git submodule foreach --recursive git add .;
+		echo "Committing changes on submodules...";
 		git submodule foreach --recursive git commit -m "${*:2}. Made from repository $1";
 		# An error seems to occur at this point for the first submodule (alphabetic order, it seems):
 		# fatal: run_command returned non-zero status for submodule
+		echo "Pushing changes on submodules...";
 		git submodule foreach --recursive git push origin master;
 	    fi
 	fi
