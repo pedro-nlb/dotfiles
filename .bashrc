@@ -34,7 +34,7 @@ push() {
     if [ $# = 0 ]; then
 	cd $HOME/git/dotfiles;
 	git add .;
-	git diff --quiet && git diff --staged --quiet || git commit -m "Some updates";
+	git commit -m "Some updates";
 	# If the diff commands are not added and there are no changes to commit, we will get errors. See below in submodules.
 	git push origin master;
 	if [ -d "$HOME/git/$1/.git/modules" ]; then
@@ -57,7 +57,7 @@ push() {
 	if [ -f main.aux ]; then
 	    latexmk -c;
 	fi
-	git add .;
+	git add --all;
 	git diff --quiet && git diff --staged --quiet || git commit -m "Some updates";
 	# If the diff commands are not added and there are no changes to commit, we will get errors. See below in submodules.
 	git push origin master;
@@ -68,7 +68,7 @@ push() {
 		echo "Adding changes on submodules...";
 		git submodule foreach --recursive git add .;
 		echo "Committing changes on submodules...";
-		git submodule foreach --recursive git diff --quiet && git diff --staged --quiet || git commit -am "Some updates. Made from repository $1";
+		git submodule foreach --recursive echo `git add . && git commit -m "Some updates. Made from repository $1"`;
 		# If the diff commands are not added an there are no changes to commit in some submodule, we will get an error which will stop the recursion:
 		# fatal: run_command returned non-zero status for submodule
 		echo "Pushing changes on submodules...";
@@ -170,4 +170,12 @@ p() {
     # If single author: "first three letters of name"+"last two digits of year"
     # If two or more authors: "initial letters of authors"+"last two digits of year"
     okular ~/refs/papers/$1* & exit;
+}
+
+updateCitations() {
+    if [ $# = 0 ]; then
+	# If no parameter is given, assume we are on the folder of a TeX file and we want to apply it to all the .tex files in the folder recursively.
+	# Step 1: create a text file with a list of all references (bibstyle alpha).
+	echo No arguments passed!;
+    fi
 }
