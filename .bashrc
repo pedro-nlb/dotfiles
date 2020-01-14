@@ -37,20 +37,20 @@ push() {
 	git commit -m "Some updates";
 	# If the diff commands are not added and there are no changes to commit, we will get errors. See below in submodules.
 	git push origin master;
-	if [ -d "$HOME/git/$1/.git/modules" ]; then
-	    echo "There are submodules!"
-	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
+	#if [ -d "$HOME/git/$1/.git/modules" ]; then
+	#    echo "There are submodules!"
+	#    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
 		# There seem to be git submodules
-		echo "Adding changes on submodules...";
-		git submodule foreach --recursive git add .;
-		echo "Committing changes on submodules...";
-		git submodule foreach --recursive git diff --quiet && git diff --staged --quiet || git commit -am "Some updates. Made from repository dotfiles";
+	#	echo "Adding changes on submodules...";
+	#	git submodule foreach --recursive git add .;
+	#	echo "Committing changes on submodules...";
+	#	git submodule foreach --recursive git diff --quiet && git diff --staged --quiet || git commit -am "Some updates. Made from repository dotfiles";
 		# If the diff commands are not added an there are no changes to commit in some submodule, we will get an error which will stop the recursion:
 		# fatal: run_command returned non-zero status for submodule
-		echo "Pushing changes on submodules...";
-		git submodule foreach --recursive git push origin master;
-	    fi
-	fi
+	#	echo "Pushing changes on submodules...";
+	#	git submodule foreach --recursive git push origin master;
+	#    fi
+	#fi
 	cd;
     elif [ $# = 1 ]; then
 	cd $HOME/git/$1;
@@ -61,20 +61,20 @@ push() {
 	git diff --quiet && git diff --staged --quiet || git commit -m "Some updates";
 	# If the diff commands are not added and there are no changes to commit, we will get errors. See below in submodules.
 	git push origin master;
-	if [ -d "$HOME/git/$1/.git/modules" ]; then
-	    echo "There are submodules!"
-	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
+	#if [ -d "$HOME/git/$1/.git/modules" ]; then
+	#    echo "There are submodules!"
+	#    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
 		# There seem to be git submodules
-		echo "Adding changes on submodules...";
-		git submodule foreach --recursive git add .;
-		echo "Committing changes on submodules...";
-		git submodule foreach --recursive echo `git add . && git commit -m "Some updates. Made from repository $1"`;
+	#	echo "Adding changes on submodules...";
+	#	git submodule foreach --recursive git add .;
+	#	echo "Committing changes on submodules...";
+	#	git submodule foreach --recursive echo `git add . && git commit -m "Some updates. Made from repository $1"`;
 		# If the diff commands are not added an there are no changes to commit in some submodule, we will get an error which will stop the recursion:
 		# fatal: run_command returned non-zero status for submodule
-		echo "Pushing changes on submodules...";
-		git submodule foreach --recursive git push origin master;
-	    fi
-	fi
+	#	echo "Pushing changes on submodules...";
+	#	git submodule foreach --recursive git push origin master;
+	#    fi
+	#fi
 	cd;
     else
 	cd ~/git/$1;
@@ -85,20 +85,20 @@ push() {
 	git diff --quiet && git diff --staged --quiet || git commit -m "${*:2}";
 	# If the diff commands are not added and there are no changes to commit, we will get errors. See below in submodules.
 	git push origin master;
-	if [ -d "$HOME/git/$1/.git/modules" ]; then
-	    echo "There are submodules!"
-	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
+	#if [ -d "$HOME/git/$1/.git/modules" ]; then
+	#    echo "There are submodules!"
+	#    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
 		# There seem to be git submodules
-		echo "Adding changes on submodules...";
-		git submodule foreach --recursive git add .;
-		echo "Committing changes on submodules...";
-		git submodule foreach --recursive git diff --quiet && git diff --staged --quiet || git commit -am "Some updates. Made from repository $1";
+	#	echo "Adding changes on submodules...";
+	#	git submodule foreach --recursive git add .;
+	#	echo "Committing changes on submodules...";
+	#	git submodule foreach --recursive git diff --quiet && git diff --staged --quiet || git commit -am "Some updates. Made from repository $1";
 		# If the diff commands are not added an there are no changes to commit in some submodule, we will get an error which will stop the recursion:
 		# fatal: run_command returned non-zero status for submodule
-		echo "Pushing changes on submodules...";
-		git submodule foreach --recursive git push origin master;
-	    fi
-	fi
+	#	echo "Pushing changes on submodules...";
+	#	git submodule foreach --recursive git push origin master;
+	#   fi
+	#fi
 	cd;
     fi
 }
