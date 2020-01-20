@@ -25,8 +25,6 @@ TEXMFHOME=/home/pedro/texmf/
 
 push() {
     # Push local changes on a repository to GitHub using
-	# If working with submodules, use the recurseSubmodules config option
-	# For this it suffices to run git config --global push.recurseSubmodules on-demand once and for all
     # First argument is the name of the repository
 	# If no arguments, then dotfiles will be the default repository
     # Remaining arguments are used as a commit message
@@ -35,46 +33,16 @@ push() {
 	cd $HOME/git/dotfiles;
 	git add .;
 	git commit -m "Some updates";
-	# If the diff commands are not added and there are no changes to commit, we will get errors. See below in submodules.
 	git push origin master;
-	if [ -d "$HOME/git/$1/.git/modules" ]; then
-	    echo "There are submodules!"
-	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
-		# There seem to be git submodules
-		echo "Adding changes on submodules...";
-		git submodule foreach --recursive git add .;
-		echo "Committing changes on submodules...";
-		git submodule foreach --recursive git diff --quiet && git diff --staged --quiet || git commit -am "Some updates. Made from repository dotfiles";
-		# If the diff commands are not added an there are no changes to commit in some submodule, we will get an error which will stop the recursion:
-		# fatal: run_command returned non-zero status for submodule
-		echo "Pushing changes on submodules...";
-		git submodule foreach --recursive git push origin master;
-	    fi
-	fi
 	cd;
     elif [ $# = 1 ]; then
 	cd $HOME/git/$1;
 	if [ -f main.aux ]; then
 	    latexmk -c;
 	fi
-	git add --all;
-	git diff --quiet && git diff --staged --quiet || git commit -m "Some updates";
-	# If the diff commands are not added and there are no changes to commit, we will get errors. See below in submodules.
+	git add .;
+	git commit -m "Some updates";
 	git push origin master;
-	if [ -d "$HOME/git/$1/.git/modules" ]; then
-	    echo "There are submodules!"
-	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
-		# There seem to be git submodules
-		echo "Adding changes on submodules...";
-		git submodule foreach --recursive git add .;
-		echo "Committing changes on submodules...";
-		git submodule foreach --recursive echo `git add . && git commit -m "Some updates. Made from repository $1"`;
-		# If the diff commands are not added an there are no changes to commit in some submodule, we will get an error which will stop the recursion:
-		# fatal: run_command returned non-zero status for submodule
-		echo "Pushing changes on submodules...";
-		git submodule foreach --recursive git push origin master;
-	    fi
-	fi
 	cd;
     else
 	cd ~/git/$1;
@@ -82,52 +50,23 @@ push() {
 	    latexmk -c;
 	fi
 	git add .;
-	git diff --quiet && git diff --staged --quiet || git commit -m "${*:2}";
-	# If the diff commands are not added and there are no changes to commit, we will get errors. See below in submodules.
+	git commit -m "${*:2}";
 	git push origin master;
-	if [ -d "$HOME/git/$1/.git/modules" ]; then
-	    echo "There are submodules!"
-	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
-		# There seem to be git submodules
-		echo "Adding changes on submodules...";
-		git submodule foreach --recursive git add .;
-		echo "Committing changes on submodules...";
-		git submodule foreach --recursive git diff --quiet && git diff --staged --quiet || git commit -am "Some updates. Made from repository $1";
-		# If the diff commands are not added an there are no changes to commit in some submodule, we will get an error which will stop the recursion:
-		# fatal: run_command returned non-zero status for submodule
-		echo "Pushing changes on submodules...";
-		git submodule foreach --recursive git push origin master;
-	    fi
-	fi
 	cd;
     fi
 }
 
 pull() {
     # Pull changes from GitHub to your local folder
-	# If working with submodules, define a git alias to pull and update submodules all at once
-	# For this it suffices to run git config --global alias.update '!git pull && git submodule update --init --recursive' once and for all
     # First argument is the name of the repository
 	# If no arguments, then dotfiles will be the default repository
     if [ $# = 0 ]; then
 	cd ~/git/dotfiles;
 	git pull origin master;
-	if [ -d "$HOME/git/$1/.git/modules" ]; then
-	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
-		# There seem to be git submodules
-		git submodule foreach git pull origin master;
-	    fi
-	fi
 	cd;
     else
 	cd ~/git/$1;
 	git pull origin master;
-	if [ -d "$HOME/git/$1/.git/modules" ]; then
-	    if [ "(ls $HOME/git/$1/.git/modules)" ]; then
-		# There seem to be git submodules
-		git submodule foreach git pull origin master;
-	    fi
-	fi
 	cd;
     fi
 }
@@ -172,6 +111,7 @@ p() {
     okular ~/refs/papers/$1* & exit;
 }
 
+# TODO
 updateCitations() {
     if [ $# = 0 ]; then
 	# If no parameter is given, assume we are on the folder of a TeX file and we want to apply it to all the .tex files in the folder recursively.
