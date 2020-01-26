@@ -76,10 +76,8 @@ new() {
     # First argument is the name of the template
     # Second argument is the name of the new folder and repository
     cd ~/git;
-    mkdir $2;
+    cp -R $HOME/git/templates/$1 $2;
     cd $2;
-    touch README.md;
-    cp ~/git/templates/$1/main.tex main.tex;
     git init;
     git add .;
     git commit -m "First commit";
