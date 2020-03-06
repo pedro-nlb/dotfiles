@@ -7,7 +7,6 @@ alias pushrefs="cd; rsync -avhr --ignore-existing refs pedro@login.mathematik.un
 alias x="exit";
 alias off="poweroff";
 alias refs="vim ~/git/bibliography/refs.bib; push bibliography Updated references;";
-alias sd="cd ~/git/sd; vim main.tex";
 alias orb="cd ~/git/orb; vim main.tex";
 alias notes="cd ~/git/notes; vim main.tex";
 alias sod="cd ~/git/sod; vim main.tex";
