@@ -6,8 +6,9 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color'
-#PS1=$'[\u@\h \W]\$ '
-PS1=$'\[\e[0m\][\[\e[31m\]\u\[\e[33m\]@\h \[\e[34m\]$PWD\[\e[0m\]]\[\e[32m\]\$ '
+#PS1=$'\[\e]0;\u@\h \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#PS1=$'\[\e[0m\][\[\e[31m\]\u\[\e[33m\]@\h \[\e[34m\]$PWD\[\e[0m\]]\[\e[32m\]\$ '
+PS1=$'\[\e[31m\]\u\[\e[0m\]@\[\e[33m\]\h\[\e[0m\]:\[\e[34m\]$PWD\[\e[32m\]\$ '
 #PS1=$'Go study math! \e[31m\]\u2764\e[33m\]\u222bK=2\u03c0\u03c7\e[31m\]\u2764 \e[32m\]\u2714 \e[34m\]\w \e[0m\]\$ ' #(This one is too much, causes some trouble with the input. But why?)
 
 if [ -f ~/.bash_aliases ]; then
@@ -19,7 +20,6 @@ export VISUAL="vim"
 # Variables
 
 GITHUBUSERNAME=pedro-nlb
-TEXMFHOME=/home/pedro/texmf/
 
 # Functions
 
@@ -37,18 +37,12 @@ push() {
 	cd;
     elif [ $# = 1 ]; then
 	cd $HOME/git/$1;
-	if [ -f main.aux ]; then
-	    latexmk -c;
-	fi
 	git add .;
 	git commit -m "Some updates";
 	git push origin master;
 	cd;
     else
 	cd ~/git/$1;
-	if [ -f main.aux ]; then
-	    latexmk -c;
-	fi
 	git add .;
 	git commit -m "${*:2}";
 	git push origin master;

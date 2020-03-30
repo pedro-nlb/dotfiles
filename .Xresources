@@ -28,7 +28,7 @@
 *color15:		#f1efee
 
 URxvt.depth:		32
-URxvt.background:	[90]#000000
+URxvt.background:	[100]#000000
 
 URxvt.scrollBar:	false
 
