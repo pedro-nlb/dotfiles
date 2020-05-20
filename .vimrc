@@ -67,9 +67,14 @@ noremap <Down> gj
 inoremap ¹ `
 inoremap ` \
 inoremap ¬ \
-inoremap @ ^
+inoremap @ -
 inoremap ~ _
 inoremap £ @
 inoremap € ~
+inoremap ² ?
+inoremap ? *
+inoremap ³ ;
+inoremap ; :
+inoremap : ^
 
 au BufReadPost *.tex set syntax=tex
