@@ -86,21 +86,21 @@ b() {
     # Open some book in the book folder
     # If single author: "first three letters of name"+"last two digits of year"
     # If two or more authors: "initial letters of authors"+"last two digits of year"
-    okular ~/refs/books/$1* & exit;
+    xdg-open ~/refs/books/$1* & exit;
 }
 
 n() {
     # Open some lelcture notes in the notes folder
     # If single author: "first three letters of name"+"last two digits of year"
     # If two or more authors: "initial letters of authors"+"last two digits of year"
-    okular ~/refs/notes/$1* & exit;
+    xdg-open ~/refs/notes/$1* & exit;
 }
 
 p() {
     # Open some paper in the paper folder
     # If single author: "first three letters of name"+"last two digits of year"
     # If two or more authors: "initial letters of authors"+"last two digits of year"
-    okular ~/refs/papers/$1* & exit;
+    xdg-open ~/refs/papers/$1* & exit;
 }
 
 # TODO
@@ -111,19 +111,3 @@ updateCitations() {
 	echo No arguments passed!;
     fi
 }
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/pedro/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/pedro/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/pedro/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/pedro/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
