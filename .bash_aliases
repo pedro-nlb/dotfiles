@@ -15,3 +15,4 @@ alias nav="cd ~/git/ss20/AbelianVarietiesSeminar/Notes; vim main.tex";
 alias orb="cd ~/git/orb; vim main.tex";
 alias core="cd ~/git/core; vim main.tex";
 alias higgs="cd ~/git/higgs; vim main.tex";
+alias endo="cd ~/git/endo; vim main.tex";
