@@ -25,7 +25,8 @@ set softtabstop=4
 
 " Colors and themes
 "colorscheme inkpot
-"colorscheme jellybeans
+colorscheme jellybeans
+"colorscheme onedark
 
 " Key mappings
 "nnoremap <F5> <Esc> :w <bar> :! pdflatex % <CR>

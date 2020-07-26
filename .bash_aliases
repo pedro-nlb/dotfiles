@@ -9,3 +9,4 @@ alias off="poweroff";
 alias refs="vim ~/git/bibliography/refs.bib; push bibliography Updated references;";
 alias orb="cd ~/git/orb; vim main.tex";
 alias core="cd ~/git/core; vim main.tex";
+alias torelli="cd ~/git/torelli; vim main.tex";
