@@ -72,6 +72,7 @@ new() {
     cd ~/git;
     cp -R $HOME/git/templates/$1 $2;
     cd $2;
+    echo $2 > README.md
     git init;
     git add .;
     git commit -m "First commit";
