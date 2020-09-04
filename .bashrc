@@ -91,7 +91,7 @@ b() {
 }
 
 n() {
-    # Open some lelcture notes in the notes folder
+    # Open some lecture notes in the notes folder
     # If single author: "first three letters of name"+"last two digits of year"
     # If two or more authors: "initial letters of authors"+"last two digits of year"
     xdg-open ~/refs/notes/$1* & exit;
@@ -102,13 +102,4 @@ p() {
     # If single author: "first three letters of name"+"last two digits of year"
     # If two or more authors: "initial letters of authors"+"last two digits of year"
     xdg-open ~/refs/papers/$1* & exit;
-}
-
-# TODO
-updateCitations() {
-    if [ $# = 0 ]; then
-	# If no parameter is given, assume we are on the folder of a TeX file and we want to apply it to all the .tex files in the folder recursively.
-	# Step 1: create a text file with a list of all references (bibstyle alpha).
-	echo No arguments passed!;
-    fi
 }
