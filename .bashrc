@@ -70,16 +70,29 @@ new() {
     # First argument is the name of the template
     # Second argument is the name of the new folder and repository
     cd ~/git;
-    cp -R $HOME/git/templates/$1 $2;
-    cd $2;
-    echo $2 > README.md
-    git init;
-    git add .;
-    git commit -m "First commit";
-    hub create -p $GITHUBUERNAME/$2;
-    git push origin master;
-    cd;
-    echo "alias $2=\"cd ~/git/$2; vim main.tex\";" >> .bash_aliases;
+    if [ $1 = "nb" ]; then
+	cp -R $HOME/git/templates/$1 nb_$2;
+	cd nb_$2;
+	echo "Nota bene "$2 > README.md
+	git init;
+	git add .;
+	git commit -m "First commit";
+	hub create -p $GITHUBUERNAME/nb_$2;
+	git push origin master;
+	cd;
+	echo "alias nb_$2=\"cd ~/git/nb_$2; vim main.tex\";" >> .bash_aliases;
+    else
+	cp -R $HOME/git/templates/$1 $2;
+	cd nb_$2;
+	echo $1 " document named "$2 > README.md
+	git init;
+	git add .;
+	git commit -m "First commit";
+	hub create -p $GITHUBUERNAME/$2;
+	git push origin master;
+	cd;
+	echo "alias $2=\"cd ~/git/$2; vim main.tex\";" >> .bash_aliases;
+    fi
     source .bash_aliases;
 }
 
