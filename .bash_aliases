@@ -13,5 +13,4 @@ alias notes_fundClass="cd ~/git/notes_fundClass; vim main.tex";
 alias notes_fundClass="cd ~/git/notes_fundClass; vim main.tex";
 alias nb_fundClassChow="cd ~/git/nb_fundClassChow; vim main.tex";
 alias prueba1="cd ~/git/prueba1; vim main.tex";
-alias nb_fundClassChow="cd ~/git/nb_fundClassChow; vim main.tex";
 alias nb_genKummerTheory="cd ~/git/nb_genKummerTheory; vim main.tex";
