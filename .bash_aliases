@@ -7,5 +7,4 @@ alias pushrefs="cd; rsync -avhr --ignore-existing refs pedro@login.mathematik.un
 alias x="exit";
 alias off="poweroff";
 alias refs="vim ~/git/bibliography/refs.bib; push bibliography Updated references;";
-alias nb_genKummerTheory="cd ~/git/nb_genKummerTheory; vim main.tex";
-alias nb_esAlg="cd ~/git/nb_EsAlg; vim main.tex";
+alias nb_esAlg="cd ~/git/nb_esAlg; vim main.tex";
