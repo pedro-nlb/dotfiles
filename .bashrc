@@ -73,7 +73,7 @@ new() {
     if [ $1 = "nb" ]; then
 	cp -R $HOME/git/templates/$1 nb_$2;
 	cd nb_$2;
-	echo "Nota bene "$2 > README.md
+	echo "Short notes on... "$2 > README.md
 	git init;
 	git add .;
 	git commit -m "First commit";
