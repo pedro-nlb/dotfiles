@@ -83,7 +83,7 @@ new() {
 	echo "alias nb_$2=\"cd ~/git/nb_$2; vim main.tex\";" >> .bash_aliases;
     else
 	cp -R $HOME/git/templates/$1 $2;
-	cd nb_$2;
+	cd $2;
 	echo $1 " document named "$2 > README.md
 	git init;
 	git add .;
