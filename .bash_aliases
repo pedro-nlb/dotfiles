@@ -8,3 +8,5 @@ alias x="exit";
 alias off="poweroff";
 alias refs="vim ~/git/bibliography/refs.bib; push bibliography Updated references;";
 alias nb_esAlg="cd ~/git/nb_esAlg; vim main.tex";
+alias nb_os="cd ~/git/nb_os; vim main.tex";
+alias zc="cd ~/git/zc; vim main.tex";
