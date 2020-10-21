@@ -6,5 +6,5 @@ alias pullrefs="cd; rsync -avhr --ignore-existing pedro@login.mathematik.uni-fre
 alias pushrefs="cd; rsync -avhr --ignore-existing refs pedro@login.mathematik.uni-freiburg.de:/home/pedro/refs;";
 alias x="exit";
 alias off="poweroff";
-alias refs="vim ~/git/bibliography/refs.bib; push bibliography Updated references;";
+alias chinese="xdg-open ~/Documents/Chinese/Textbooks/practicalchineseT1.pdf & exit;"
 alias nb_esAlg="cd ~/git/nb_esAlg; vim main.tex";
