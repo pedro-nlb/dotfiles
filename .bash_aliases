@@ -10,3 +10,4 @@ alias chinese="xdg-open ~/Documents/Chinese/Textbooks/practicalchineseT1.pdf & e
 alias nb_esAlg="cd ~/git/nb_esAlg; vim main.tex";
 alias nb_os="cd ~/git/nb_os; vim main.tex";
 alias zc="cd ~/git/zc; vim main.tex";
+alias orbisite="cd ~/git/orbisite; vim main.tex";
