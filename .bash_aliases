@@ -8,3 +8,4 @@ alias orbisite="cd ~/git/orbisite; vim main.tex";
 alias nb_psquared="cd ~/git/nb_psquared; vim main.tex";
 alias nb_pmult="cd ~/git/nb_pmult; vim main.tex";
 alias sseq="cd ~/git/sseq; vim main.tex";
+alias m2="cd ~/git/sseq/m2;";
