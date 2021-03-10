@@ -32,4 +32,4 @@ URxvt.background:	[100]#000000
 
 URxvt.scrollBar:	false
 
-URxvt.font:		xft:monospace:size=16
+URxvt.font:		xft:monospace:size=14

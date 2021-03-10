@@ -116,3 +116,5 @@ p() {
     # If two or more authors: "initial letters of authors"+"last two digits of year"
     xdg-open ~/refs/papers/$1* & exit;
 }
+
+PATH=$PATH:/home/pedro/.elan/bin
