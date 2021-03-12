@@ -9,5 +9,5 @@ alias nb_psquared="cd ~/git/nb_psquared; vim main.tex";
 alias nb_pmult="cd ~/git/nb_pmult; vim main.tex";
 alias m2="cd ~/git/sseq/m2;";
 alias egn="cd ~/git/egn; vim main.tex";
-alias phd="cd ~/git/phd/updates; vim week10.tex";
+alias phd="cd ~/git/phd/updates; vim week11.tex";
 alias p3="cd ~/git/adapted-extension; vim chapter2.tex";
