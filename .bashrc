@@ -67,31 +67,27 @@ pull() {
 
 new() {
     # Create a new latex document with the corresponding git repository
-    # First argument is the name of the template
-    # Second argument is the name of the new folder and repository
+    # First argument is the type of template (beamer/blurb/notes/script)
+    # Second argument is the name of the new document
     cd ~/git;
-    if [ $1 = "nb" ]; then
-	cp -R $HOME/git/templates/$1 nb_$2;
-	cd nb_$2;
-	echo "Short notes on... "$2 > README.md
-	git init;
-	git add .;
-	git commit -m "First commit";
-	hub create -p $GITHUBUERNAME/nb_$2;
-	git push origin master;
+    if [ "${1}" = "beamer" ]
+    then
+	mkdir "beamer-$(echo "${@:2}" | tr ' ' '-')"
+	cd "beamer-$(echo "${@:2}" | tr ' ' '-')"
+	cp "$HOME/git/latex-templates/${1}.tex" "main.tex"
+	touch "main.bib"
+	echo "# ${@:2}" >> "README.md"
+	echo "" >> "README.md"
+	echo "Beamer presentation created from a the beamer template [here](https://github.com/pedro-nlb/latex-templates)." >> "README.md"
+	#git init;
+	#git add .;
+	#git commit -m "First commit";
+	#hub create -p $GITHUBUSERNAME/nb_$2;
+	#git push origin master;
 	cd;
-	echo "alias nb_$2=\"cd ~/git/nb_$2; vim main.tex\";" >> .bash_aliases;
+	#echo "alias beamer-${2}=\"cd ~/git/beamer-${2}; vim main.tex\";" >> ".bash_aliases";
     else
-	cp -R $HOME/git/templates/$1 $2;
-	cd $2;
-	echo $1 " document named "$2 > README.md
-	git init;
-	git add .;
-	git commit -m "First commit";
-	hub create -p $GITHUBUERNAME/$2;
-	git push origin master;
-	cd;
-	echo "alias $2=\"cd ~/git/$2; vim main.tex\";" >> .bash_aliases;
+	echo "Please enter as a first argument the type of template to use (beamer/blurb/notes/script) and use the remaining arguments for the name of the document and repository (blank spaces will be replaced by hyphens)."
     fi
     source .bash_aliases;
 }
