@@ -100,21 +100,21 @@ b() {
     # Open some book in the book folder
     # If single author: "first three letters of name"+"last two digits of year"
     # If two or more authors: "initial letters of authors"+"last two digits of year"
-    xdg-open ~/refs/books/$1* & exit;
+    xdg-open 2>/dev/null ~/refs/books/$1* & exit;
 }
 
 n() {
     # Open some lecture notes in the notes folder
     # If single author: "first three letters of name"+"last two digits of year"
     # If two or more authors: "initial letters of authors"+"last two digits of year"
-    xdg-open ~/refs/notes/$1* & exit;
+    xdg-open 2>/dev/null ~/refs/notes/$1* & exit;
 }
 
 p() {
     # Open some paper in the paper folder
     # If single author: "first three letters of name"+"last two digits of year"
     # If two or more authors: "initial letters of authors"+"last two digits of year"
-    xdg-open ~/refs/papers/$1* & exit;
+    xdg-open 2>/dev/null ~/refs/papers/$1* & exit;
 }
 
 PATH=$PATH:/home/pedro/.elan/bin
