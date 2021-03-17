@@ -68,7 +68,7 @@ pull() {
 new() {
     # Create a new latex document with the corresponding git repository
     # First argument is the type of template (beamer/blurb/notes/script)
-    # Second argument is the name of the new document
+    # Second argument is the name of the new document (blank spaces will be replaced by hyphens)
     cd ~/git;
     if [ "${1}" = "beamer" ]
     then
@@ -79,13 +79,18 @@ new() {
 	echo "# ${@:2}" >> "README.md"
 	echo "" >> "README.md"
 	echo "Beamer presentation created from a the beamer template [here](https://github.com/pedro-nlb/latex-templates)." >> "README.md"
-	#git init;
-	#git add .;
-	#git commit -m "First commit";
-	#hub create -p $GITHUBUSERNAME/nb_$2;
-	#git push origin master;
-	cd;
-	#echo "alias beamer-${2}=\"cd ~/git/beamer-${2}; vim main.tex\";" >> ".bash_aliases";
+	cp "$HOME/git/latex-templates/auxiliary/gitignore" ".gitignore"
+	git init
+	git add .
+	git commit -m "First commit"
+	hub create -p "$GITHUBUSERNAME/beamer-$(echo "${@:2}" | tr ' ' '-')"
+	git push origin master
+	cd
+	read -p "Alias to edit main.tex [press enter if none]: "
+	if [ -n "${REPLY}" ]
+	then
+	    echo "alias ${REPLY}=\"cd ~/git/beamer-$(echo "${@:2}" | tr ' ' '-'); vim main.tex\";" >> ".bash_aliases"
+	fi
     else
 	echo "Please enter as a first argument the type of template to use (beamer/blurb/notes/script) and use the remaining arguments for the name of the document and repository (blank spaces will be replaced by hyphens)."
     fi

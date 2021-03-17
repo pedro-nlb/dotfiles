@@ -7,3 +7,4 @@ alias off="poweroff";
 alias egn="cd ~/git/egn; vim main.tex";
 alias phd="cd ~/git/phd/updates; vim week11.tex";
 alias p3="cd ~/git/adapted-extension; vim chapter2.tex";
+alias justatest="cd ~/git/beamer-just-testing; vim main.tex";
