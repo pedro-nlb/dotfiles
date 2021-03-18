@@ -29,24 +29,26 @@ push() {
 	# If no arguments, then dotfiles will be the default repository
     # Remaining arguments are used as a commit message
 	# If at most one argument, "Some updates" will be the default commit message
-    if [ $# = 0 ]; then
-	cd $HOME/git/dotfiles;
-	git add .;
-	git commit -m "Some updates";
-	git push origin master;
-	cd;
-    elif [ $# = 1 ]; then
-	cd $HOME/git/$1;
-	git add .;
-	git commit -m "Some updates";
-	git push origin master;
-	cd;
+    if [ $# = 0 ]
+    then
+	cd "${HOME}/git/dotfiles"
+	git add .
+	git commit -m "Some updates"
+	git push origin master
+	cd
+    elif [ $# = 1 ]
+    then
+	cd "${HOME}/git/${1}"
+	git add .
+	git commit -m "Some updates"
+	git push origin master
+	cd
     else
-	cd ~/git/$1;
-	git add .;
-	git commit -m "${*:2}";
-	git push origin master;
-	cd;
+	cd "${HOME}/git/${1}"
+	git add .
+	git commit -m "${@:2}"
+	git push origin master
+	cd
     fi
 }
 
@@ -54,14 +56,15 @@ pull() {
     # Pull changes from GitHub to your local folder
     # First argument is the name of the repository
 	# If no arguments, then dotfiles will be the default repository
-    if [ $# = 0 ]; then
-	cd ~/git/dotfiles;
-	git pull origin master;
-	cd;
+    if [ $# = 0 ]
+    then
+	cd "${HOME}/git/dotfiles"
+	git pull origin master
+	cd
     else
-	cd ~/git/$1;
-	git pull origin master;
-	cd;
+	cd "${HOME}/git/${1}"
+	git pull origin master
+	cd
     fi
 }
 
@@ -69,27 +72,27 @@ new() {
     # Create a new latex document with the corresponding git repository
     # First argument is the type of template (beamer/blurb/notes/script)
     # Second argument is the name of the new document (blank spaces will be replaced by hyphens)
-    cd ~/git;
-    if [ "${1}" = "beamer" ]
+    cd "${HOME}/git"
+    if [ "${1}" = "beamer" ] || [ "${1}" = "blurb" ] || [ "${1}" = "notes" ] || [ "${1}" = "script" ]
     then
-	mkdir "beamer-$(echo "${@:2}" | tr ' ' '-')"
-	cd "beamer-$(echo "${@:2}" | tr ' ' '-')"
-	cp "$HOME/git/latex-templates/${1}.tex" "main.tex"
+	mkdir "$(echo "${@}" | tr ' ' '-')"
+	cd "$(echo "${@}" | tr ' ' '-')"
+	cp "${HOME}/git/latex-templates/${1}.tex" "main.tex"
 	touch "main.bib"
 	echo "# ${@:2}" >> "README.md"
 	echo "" >> "README.md"
-	echo "Beamer presentation created from a the beamer template [here](https://github.com/pedro-nlb/latex-templates)." >> "README.md"
-	cp "$HOME/git/latex-templates/auxiliary/gitignore" ".gitignore"
+	echo "Document created from a the ${1} template [here](https://github.com/pedro-nlb/latex-templates)." >> "README.md"
+	cp "${HOME}/git/latex-templates/auxiliary/gitignore" ".gitignore"
 	git init
 	git add .
 	git commit -m "First commit"
-	hub create -p "$GITHUBUSERNAME/beamer-$(echo "${@:2}" | tr ' ' '-')"
+	hub create -p "${GITHUBUSERNAME}/$(echo "${@}" | tr ' ' '-')"
 	git push origin master
 	cd
 	read -p "Alias to edit main.tex [press enter if none]: "
 	if [ -n "${REPLY}" ]
 	then
-	    echo "alias ${REPLY}=\"cd ~/git/beamer-$(echo "${@:2}" | tr ' ' '-'); vim main.tex\";" >> ".bash_aliases"
+	    echo "alias ${REPLY}=\"cd ~/git/$(echo "${@}" | tr ' ' '-'); vim main.tex\";" >> ".bash_aliases"
 	fi
     else
 	echo "Please enter as a first argument the type of template to use (beamer/blurb/notes/script) and use the remaining arguments for the name of the document and repository (blank spaces will be replaced by hyphens)."
@@ -101,21 +104,21 @@ b() {
     # Open some book in the book folder
     # If single author: "first three letters of name"+"last two digits of year"
     # If two or more authors: "initial letters of authors"+"last two digits of year"
-    xdg-open 2>/dev/null ~/refs/books/$1* & exit;
+    xdg-open 2>/dev/null "${HOME}/refs/books/${1}"* & exit
 }
 
 n() {
     # Open some lecture notes in the notes folder
     # If single author: "first three letters of name"+"last two digits of year"
     # If two or more authors: "initial letters of authors"+"last two digits of year"
-    xdg-open 2>/dev/null ~/refs/notes/$1* & exit;
+    xdg-open 2>/dev/null "${HOME}/refs/notes/${1}"* & exit
 }
 
 p() {
     # Open some paper in the paper folder
     # If single author: "first three letters of name"+"last two digits of year"
     # If two or more authors: "initial letters of authors"+"last two digits of year"
-    xdg-open 2>/dev/null ~/refs/papers/$1* & exit;
+    xdg-open 2>/dev/null "${HOME}/refs/papers/${1}"* & exit
 }
 
 PATH=$PATH:/home/pedro/.elan/bin
