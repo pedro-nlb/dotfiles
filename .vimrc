@@ -52,22 +52,5 @@ nnoremap <C-L> :nohl<CR><C-L>
 nnoremap <F10> <Esc>:w<CR>:! latexmk -c<CR>
 inoremap <F10> <Esc>:w<CR>:! latexmk -c<CR>
 vnoremap <F10> <Esc>:w<CR>:! latexmk -c<CR>
-" Special keys
-"noremap j gj
-"noremap k gk
-"noremap <Up> gk
-"noremap <Down> gj
-"inoremap ¹ `
-"inoremap ` \
-"inoremap ¬ \
-"inoremap @ -
-"inoremap ~ _
-"inoremap £ @
-"inoremap € ~
-"inoremap ² ?
-"inoremap ? *
-"inoremap ³ ;
-"inoremap ; :
-"inoremap : ^
 
 au BufReadPost *.tex set syntax=tex
