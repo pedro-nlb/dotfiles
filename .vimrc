@@ -53,10 +53,10 @@ nnoremap <F10> <Esc>:w<CR>:! latexmk -c<CR>
 inoremap <F10> <Esc>:w<CR>:! latexmk -c<CR>
 vnoremap <F10> <Esc>:w<CR>:! latexmk -c<CR>
 " Special keys
-noremap j gj
-noremap k gk
-noremap <Up> gk
-noremap <Down> gj
+"noremap j gj
+"noremap k gk
+"noremap <Up> gk
+"noremap <Down> gj
 "inoremap ¹ `
 "inoremap ` \
 "inoremap ¬ \
