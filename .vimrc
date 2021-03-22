@@ -1,34 +1,49 @@
-"Features
+" tl;dr (see https://stackoverflow.com/questions/5845557/in-a-vimrc-is-set-nocompatible-completely-useless)
 set nocompatible
-filetype indent plugin on
-syntax on
 
-" Options
-set wildmenu
-set showcmd
+" Enable filetype detection
+filetype on
+" Enable filetype-dependant plugins
+filetype plugin on
+" Enable filetype-dependant indentation
+filetype indent on
+
+" Turn hybrid line numbers on
+set number relativenumber
+set nu rnu
+
+" Indentation with hard tabs and smartindent
+set shiftwidth=2
+set tabstop=2
+
+" Disable error sound at the end of line etc
+set noerrorbells
+
+" Incremental and highlighted search
+set incsearch
 set hlsearch
 
-" Usability options
-set ignorecase
-set smartcase
-set ruler
-set confirm
-set mouse=a
-set cmdheight=2
-set number
-set display+=lastline
-set incsearch
+" Options
+"set wildmenu
+"set showcmd
 
-" Indentation options
-set shiftwidth=4
-set softtabstop=4
+" Usability options
+"set ignorecase
+"set smartcase
+"set ruler
+"set confirm
+"set cmdheight=2
+"set number
+"set display+=lastline
 
 " Colors and themes
 "colorscheme inkpot
-colorscheme jellybeans
+"colorscheme jellybeans
 "colorscheme onedark
 
 " Key mappings
+"nnoremap <CAPS> <Esc>
+
 "nnoremap <F5> <Esc> :w <bar> :! pdflatex % <CR>
 " Compile
 nnoremap <F2> <Esc>:w<CR> :! latexmk -pdf -silent main.tex<CR>
@@ -52,5 +67,3 @@ nnoremap <C-L> :nohl<CR><C-L>
 nnoremap <F10> <Esc>:w<CR>:! latexmk -c<CR>
 inoremap <F10> <Esc>:w<CR>:! latexmk -c<CR>
 vnoremap <F10> <Esc>:w<CR>:! latexmk -c<CR>
-
-au BufReadPost *.tex set syntax=tex
