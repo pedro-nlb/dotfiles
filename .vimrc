@@ -50,13 +50,8 @@ set visualbell
 " Replace flash by nothing
 set t_vb=
 
-" Colors and themes
-"colorscheme inkpot
-"colorscheme jellybeans
-"colorscheme onedark
 
 " Key mappings
-"nnoremap <CAPS> <Esc>
 
 "nnoremap <F5> <Esc> :w <bar> :! pdflatex % <CR>
 " Compile
@@ -81,3 +76,8 @@ nnoremap <C-L> :nohl<CR><C-L>
 nnoremap <F10> <Esc>:w<CR>:! latexmk -c<CR>
 inoremap <F10> <Esc>:w<CR>:! latexmk -c<CR>
 vnoremap <F10> <Esc>:w<CR>:! latexmk -c<CR>
+
+colorscheme jellybeans
+hi Normal ctermbg=NONE
+highlight clear LineNr
+highlight LineNr ctermfg=DarkGray
