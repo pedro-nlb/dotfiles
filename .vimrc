@@ -54,7 +54,7 @@ set visualbell
 set t_vb=
 
 " Colors and backgrounds
-"colorscheme jellybeans
+colorscheme jellybeans
 hi Normal ctermbg=NONE
 highlight clear LineNr
 highlight LineNr ctermfg=DarkGray
