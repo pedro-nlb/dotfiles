@@ -17,7 +17,7 @@ For the purposes of this guide, let's assume we want to synchronize the files *.
 
 Install and configure git, for example by running the followign commands in the terminal
 
-```
+```bash
 sudo apt install git
 git config --global user.name "Your Name"
 git config --global user.email your@email.com
@@ -32,32 +32,32 @@ It is also useful to use an SSH key to connect to GitHub, that way we don't need
 
 To start, we open a new terminal window. It should open by default in our home folder. To make sure this is the case, we can run `pwd` on the terminal. The output should be
 
-```
-/home/username
+```bash
+/home/name
 ```
 
 To see our dotfiles, run `ls -a`. We can create a folder to backup our current dotfiles, e.g. by running `mkdir old_dotfiles`. We move the files that we want to replace by files from this repository to this folder. In our example we would run
 
-```
+```bash
 mv .bashrc $HOME/old_dotfiles/.bashrc
 mv .vimrc $HOME/old_dotfiles/.vimrc
 ```
 Next we change the current directory to the directory in which we want to clone this repository. For example
 
-```
+```bash
 mkdir git
 cd git
 ```
 
 We fork this repository on GitHub and then run in the terminal
 
-```
+```bash
 git clone git@github.com:/username/dotfiles.git
 ```
 
 Finally we can create the corresponding [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link). In our example we would run
 
-```
+```bash
 ln -s /home/name/git/dotfiles/.bashrc /home/name/.bashrc
 ln -s /home/name/git/dotfiles/.vimrc /home/name/.vimrc
 ```
@@ -66,19 +66,19 @@ ln -s /home/name/git/dotfiles/.vimrc /home/name/.vimrc
 
 We open a new terminal window and change the current directory to the directory of the local repository. In our example, we would run
 
-```
+```bash
 cd $HOME/git/dotfiles
 ```
 
 Then we pull the changes from GitHub by running the command
 
-```
+```bash
 git pull origin master
 ```
 
 **Shortcut**: if *.bashrc* is one of the files that is taken from this repository, it is enough to run
 
-```
+```bash
 pull
 ```
 
@@ -86,13 +86,13 @@ pull
 
 We open a new terminal window and change the current directory to the directory of the local repository. In our example, we would run
 
-```
+```bash
 cd $HOME/git/dotfiles
 ```
 
 Then we add, commit and push the local changes to GitHub by running the commands
 
-```
+```bash
 git add .
 git commit -m "Commit message, e.g. updated .bashrc"
 git push origin master
@@ -100,6 +100,6 @@ git push origin master
 
 **Shortcut**: if *.bashrc* is one of the files that is taken from this repository, it is enough to run
 
-```
+```bash
 push "Commit message, e.g. updated .bashrc"
 ```
