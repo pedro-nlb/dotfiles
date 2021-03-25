@@ -59,6 +59,3 @@ hi Normal ctermbg=NONE
 highlight clear LineNr
 highlight LineNr ctermfg=DarkGray
 highlight NonText ctermbg=NONE
-
-" Read pdf
-:command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> -
