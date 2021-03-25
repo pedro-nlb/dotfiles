@@ -206,4 +206,3 @@ exec_always feh --bg-scale /home/pedro/Pictures/wallpaper.jpg
 
 # Open Firefox quickly
 bindsym $mod+b exec --no-startup-id firefox
-bindsym $mod+Shift+b exec --no-startup-id i3-msg 'workspace 0; exec firefox'
