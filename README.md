@@ -52,7 +52,7 @@ cd git
 We fork this repository on GitHub and then run in the terminal
 
 ```bash
-git clone git@github.com:/username/dotfiles.git
+git clone git@github.com:username/dotfiles.git
 ```
 
 Finally we can create the corresponding [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link). In our example we would run
