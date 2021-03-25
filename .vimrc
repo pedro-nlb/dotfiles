@@ -59,3 +59,4 @@ hi Normal ctermbg=NONE
 highlight clear LineNr
 highlight LineNr ctermfg=DarkGray
 highlight NonText ctermbg=NONE
+
