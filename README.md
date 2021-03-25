@@ -18,7 +18,7 @@ For the purposes of this guide, let's assume we want to synchronize the files *.
 Install and configure git, for example by running the followign commands in the terminal
 
 ```
-sudo apt-get install git
+sudo apt install git
 git config --global user.name "Your Name"
 git config --global user.email your@email.com
 git config --global core.editor vim
@@ -39,8 +39,8 @@ To start, we open a new terminal window. It should open by default in our home f
 To see our dotfiles, run `ls -a`. We can create a folder to backup our current dotfiles, e.g. by running `mkdir old_dotfiles`. We move the files that we want to replace by files from this repository to this folder. In our example we would run
 
 ```
-mv .bashrc ~/old_dotfiles/.bashrc
-mv .vimrc ~/old_dotfiles/.vimrc
+mv .bashrc $HOME/old_dotfiles/.bashrc
+mv .vimrc $HOME/old_dotfiles/.vimrc
 ```
 Next we change the current directory to the directory in which we want to clone this repository. For example
 
@@ -58,8 +58,8 @@ git clone git@github.com:/username/dotfiles.git
 Finally we can create the corresponding [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link). In our example we would run
 
 ```
-ln -s /home/username/git/dotfiles/.bashrc /home/user/.bashrc
-ln -s /home/username/git/dotfiles/.vimrc /home/user/.vimrc
+ln -s /home/name/git/dotfiles/.bashrc /home/name/.bashrc
+ln -s /home/name/git/dotfiles/.vimrc /home/name/.vimrc
 ```
 
 ### Pull changes from GitHub
@@ -67,7 +67,7 @@ ln -s /home/username/git/dotfiles/.vimrc /home/user/.vimrc
 We open a new terminal window and change the current directory to the directory of the local repository. In our example, we would run
 
 ```
-cd /home/username/git/dotfiles
+cd $HOME/git/dotfiles
 ```
 
 Then we pull the changes from GitHub by running the command
@@ -87,7 +87,7 @@ pull
 We open a new terminal window and change the current directory to the directory of the local repository. In our example, we would run
 
 ```
-cd /home/username/git/dotfiles
+cd $HOME/git/dotfiles
 ```
 
 Then we add, commit and push the local changes to GitHub by running the commands
