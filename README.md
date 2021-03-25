@@ -61,6 +61,12 @@ Finally we can create the corresponding [symbolic links](https://en.wikipedia.or
 ln -s /home/name/git/dotfiles/.bashrc /home/name/.bashrc
 ln -s /home/name/git/dotfiles/.vimrc /home/name/.vimrc
 ```
+We can also create symbolic links for entire folders, for instance
+
+```bash
+ln -s /home/name/git/dotfiles/.vim /home/name/.vim
+ln -s /home/name/git/dotfiles/i3 /home/name/.config/i3
+```
 
 ### Pull changes from GitHub
 
