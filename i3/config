@@ -206,3 +206,7 @@ exec_always feh --bg-scale /home/pedro/Pictures/wallpaper.jpg
 
 # Open Firefox quickly
 bindsym $mod+b exec --no-startup-id firefox
+
+# Turn off screen saver and power saving
+exec_alwasy xset s off
+exec_always xset -dpms
