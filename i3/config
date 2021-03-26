@@ -210,3 +210,4 @@ bindsym $mod+b exec --no-startup-id firefox
 # Turn off screen saver and power saving
 exec_alwasy xset s off
 exec_always xset -dpms
+exec_always xset s noblank
