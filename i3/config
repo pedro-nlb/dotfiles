@@ -209,3 +209,6 @@ bindsym $mod+b exec --no-startup-id firefox
 
 # Turn off display blanking after inactivity period
 exec --no-startup-id "sleep 15; xset s off && xset -dpms && xset s noblank"
+
+# Add volume control icon
+exec volumeicon

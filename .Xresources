@@ -31,7 +31,7 @@ URxvt.depth:		32
 URxvt.background:	[85]#000000
 
 URxvt.transparent: true
-URxvt.shading:5
+URxvt.shading:15
 
 URxvt.scrollBar:	false
 
