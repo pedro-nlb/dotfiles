@@ -221,3 +221,7 @@ focus_follows_mouse no
 
 # Fade transition effect
 exec_always compton -f
+
+# Adjust screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20
