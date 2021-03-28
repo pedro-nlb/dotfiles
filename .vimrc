@@ -9,6 +9,8 @@ filetype plugin on
 
 " Enable filetype-dependent indentation
 filetype indent on
+" Basic auto indentation for unknow filetypes
+set autoindent
 
 " Indentation with hard tabs and smartindent
 set shiftwidth=2

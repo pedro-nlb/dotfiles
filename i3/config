@@ -26,6 +26,9 @@ font pango:DejaVu Sans Mono 10
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+# Lock screen keybinding with black background
+bindsym $mod+shift+x exec i3lock --color "#000000"
+
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
@@ -106,7 +109,7 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
-set $ws2 "2"
+set $ws2 "2:"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -114,7 +117,10 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws0 "0"
+set $ws10 "0"
+
+# Open in certain workspaces by default
+assign [class="Firefox"] $ws2
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -126,7 +132,7 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws0
+bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -186,12 +192,12 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
-				mode hide
-				hidden_state hide
+        status_command i3status -c
+				#mode hide
+				#hidden_state hide
 				modifier Mod4
 				font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-				font pango:DejaVu Sans Mono 9
+				font pango:DejaVu Sans Mono 8
 }
 
 # Border style for new windows
@@ -201,7 +207,7 @@ default_floating_border normal
 # Hide borders adjacent to the screen edges
 hide_edge_borders vertical
 
-# Startup programs
+# Wallpaper
 exec_always feh --bg-scale /home/pedro/Pictures/wallpaper.jpg
 
 # Open Firefox quickly
@@ -210,5 +216,8 @@ bindsym $mod+b exec --no-startup-id firefox
 # Turn off display blanking after inactivity period
 exec --no-startup-id "sleep 15; xset s off && xset -dpms && xset s noblank"
 
-# Add volume control icon
-exec volumeicon
+# Avoide focusfollowing the mouse
+focus_follows_mouse no
+
+# Fade transition effect
+exec_always compton -f
