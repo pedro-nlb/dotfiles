@@ -193,8 +193,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status -c
-				#mode hide
-				#hidden_state hide
+				mode hide
+				hidden_state hide
 				modifier Mod4
 				font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 				font pango:DejaVu Sans Mono 8
@@ -221,7 +221,3 @@ focus_follows_mouse no
 
 # Fade transition effect
 exec_always compton -f
-
-# Adjust screen brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20
