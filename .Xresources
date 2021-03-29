@@ -28,11 +28,11 @@
 *color15:		#f1efee
 
 URxvt.depth:		32
-URxvt.background:	[65]#000000
+URxvt.background:	[90]#000000
 
 URxvt.transparent: true
 URxvt.shading:15
 
 URxvt.scrollBar:	false
 
-URxvt.font:		xft:monospace:size=18
+URxvt.font:		xft:monospace:size=12
