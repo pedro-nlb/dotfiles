@@ -22,72 +22,62 @@ Using different programs requires changing the content of the files or the files
 3. Install the updates suggested by the Software Updater and restart as suggested.
 
 4. Double check that there isn't anything else left to update:
-```bash
-$ sudo apt update
-```
-If it says that some number of packages can be upgraded, then:
-```bash
-$ sudo apt upgrade
-```
 
-5. Install git, vim-gtk3, rxvt-unicode and i3:
-```bash
-$ sudo apt install git vim-gtk3 rxvt-unicode i3
-```
-Installing vim-gtk3 instead of just vim allows one to use the system clipboard.
+        $ sudo apt update
+
+  If it says that some number of packages can be upgraded, then:
+
+        $ sudo apt upgrade
+
+5. Install git, vim-gtk3, rxvt-unicode, i3, feh and compton:
+
+        $ sudo apt install git vim-gtk3 rxvt-unicode i3 feh compton
+       
+  Installing vim-gtk3 instead of just vim allows one to use the system clipboard.
 
 
 6. Configure git:
-```bash
-$ git config --global user.name "Your Name"
-$ git config --global user.email your@email.com
-$ git config --global core.editor vim
-$ git config --global merge.tool vimdiff
-```
-It is also useful to use an SSH key to connect to GitHub, that way one doesn't need to enter username and password on every pull or push. See [this guide](https://help.github.com/en/articles/connecting-to-github-with-ssh). Using a passphrase implies again that it has to be introduced on every pull or push, so I personally prefer to skip using it.
+
+        $ git config --global user.name "Your Name"
+        $ git config --global user.email your@email.com
+        $ git config --global core.editor vim
+        $ git config --global merge.tool vimdiff
+
+  It is also useful to use an SSH key to connect to GitHub, that way one doesn't need to enter username and password on every pull or push. See [this guide](https://help.github.com/en/articles/connecting-to-github-with-ssh). Using a passphrase implies again that it has to be introduced on every pull or push, so I personally prefer to skip using it.
 
 7. Now one can finally clone this repository. The first two lines below are just there because I like to keep all the local git repositories inside a single folder:
-```bash
-$ mkdir git
-$ cd git
-$ git clone git@github.com:pedro-nlb/dotfiles 
-```
+
+        $ mkdir git
+        $ cd git
+        $ git clone git@github.com:pedro-nlb/dotfiles
 
 8. Optionally, one can backup some of the dotfiles that will be replaced. For example:
-```bash
-$ mkdir .old_dotfiles
-$ cp .bashrc $HOME/old_dotfiles/.bashrc
-```
-Then one can safely replace them by [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link) to the ones from this repository:
-```bash
-$ rm .bashrc
-$ ln -s /home/username/git/dotfiles/.bashrc /home/username/.bashrc
-$ ln -s /home/username/git/dotfiles/.bash_aliases /home/username/.bash_aliases
-$ ln -s /home/username/git/dotfiles/.bash_profile /home/username/.bash_profile
-$ ln -s /home/username/git/dotfiles/.vimrc /home/username/.vimrc
-$ ln -s /home/username/git/dotfiles/.vim /home/username/.vim
-$ ln -s /home/username/git/dotfiles/.xinitrc /home/username/.xinitrc
-$ ln -s /home/username/git/dotfiles/.Xresources /home/username/.Xresources
-$ ln -s /home/username/git/dotfiles/i3 /home/username/.config/i3
-$ ln -s /home/username/git/dotfiles/i3status /home/username/.config/i3status
-$ ln -s /home/username/git/dotfiles/gtk-3.0 /home/username/.config/gtk-3.0
-```
+
+        $ mkdir .old_dotfiles
+        $ cp .bashrc $HOME/old_dotfiles/.bashrc
+        
+  Then one can safely remove them and add [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link) to the ones from this repository:
+
+        $ rm .bashrc
+        $ ln -s /home/username/git/dotfiles/.bashrc /home/username/.bashrc
+        $ ln -s /home/username/git/dotfiles/.bash_aliases /home/username/.bash_aliases
+        $ ln -s /home/username/git/dotfiles/.bash_profile /home/username/.bash_profile
+        $ ln -s /home/username/git/dotfiles/.vimrc /home/username/.vimrc
+        $ ln -s /home/username/git/dotfiles/.vim /home/username/.vim
+        $ ln -s /home/username/git/dotfiles/.xinitrc /home/username/.xinitrc
+        $ ln -s /home/username/git/dotfiles/.Xresources /home/username/.Xresources
+        $ ln -s /home/username/git/dotfiles/i3 /home/username/.config/i3
+        $ ln -s /home/username/git/dotfiles/i3status /home/username/.config/i3status
+        $ ln -s /home/username/git/dotfiles/gtk-3.0 /home/username/.config/gtk-3.0
 
 9. To set rxvt-unicode as the default terminal emulator:
-```bash
-$ sudo update-alternatives --config x-terminal-emulator
-```
 
-10. One can log out and log into i3 by selecting this option from the menu that appears in the bottom-right corner of the screen while entering one's password.
-To set up the wallpaper:
-```bash
-$ sudo apt install feh
-$ cd Pictures
-$ wget https://i.redd.it/c3uhsgo1vx541.jpg
-$ mv c3uhsgo1vx541.jpg wallpaper.jpg
-```
-For the fading effects:
-```bash
-$ sudo apt install compton
-```
-To see the result, one can restart i3 by pressing mod+R.
+        $ sudo update-alternatives --config x-terminal-emulator
+        
+10. To set up a wallpaper, save the image that you like as wallpaper.jpg in the Pictures folder. For example:
+
+        $ cd Pictures
+        $ wget https://i.redd.it/c3uhsgo1vx541.jpg
+        $ mv c3uhsgo1vx541.jpg wallpaper.jpg
+        
+**Done!** To log into i3, one can select the i3 option in the menu that appears on the bottom-right of the screen while logging in to one's profile.
