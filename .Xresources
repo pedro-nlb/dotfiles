@@ -35,4 +35,4 @@ URxvt.shading:15
 
 URxvt.scrollBar:	false
 
-URxvt.font:		xft:monospace:size=14
+URxvt.font:		xft:monospace:size=12

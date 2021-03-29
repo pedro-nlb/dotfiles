@@ -1,111 +1,93 @@
 # dotfiles
 
-Use this repository to synchronize some files such as *.bashrc* or *.vimrc* between different computers. Some relevant choices:
+The purpose of this repository is to synchronize some files such as *.bashrc* or *.vimrc* between different devices. Some relevant choices:
 - [Shell](https://wiki.archlinux.org/index.php/Command-line_shell): [Bash](https://wiki.archlinux.org/index.php/bash).
 - [Text editor](https://en.wikipedia.org/wiki/Text_editor): [Vim](https://wiki.archlinux.org/index.php/vim).
 - [Display server](https://en.wikipedia.org/wiki/Display_server): [Xorg](https://www.x.org/wiki/).
 - [Window manager](https://wiki.archlinux.org/index.php/Window_manager): [i3](https://wiki.archlinux.org/index.php/I3).
 - [Terminal emulator](https://en.wikipedia.org/wiki/Terminal_emulator): [rxvt-unicode](https://wiki.archlinux.org/index.php/rxvt-unicode).
 
-Using different programs requires changing the content of the files or even the files themselves.
+Using different programs requires changing the content of the files or the files themselves.
 
-## Quick guide
+## Quick guide (fresh start)
 
-For the purposes of this guide, let's assume we want to synchronize the files *.bashrc* and *.vimrc* in our computer with the ones in this repository.
+*Disclaimer*: the steps below are the ones that I usually follow and they seem to work fine, but there is no guarantee of correctedness.
 
-### Preliminaries
+### Ubuntu Desktop (20.04)
 
-Install and configure git, for example by running the followign commands in the terminal
+1. Install [Ubuntu Desktop](https://ubuntu.com/download/desktop), one can follow [this tutorial](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview) for instance. The options I chose while writing this guide were: minimal installation, download updates while installing and install third-party software.
 
+2. To click *Skip* in the initial window of the desktop setup one can press Alt+s.
+
+3. Install the updates suggested by the Software Updater and restart as suggested.
+
+4. Double check that there isn't anything else left to update:
 ```bash
-sudo apt install git
-git config --global user.name "Your Name"
-git config --global user.email your@email.com
-git config --global core.editor vim
-git config --global merge.tool vimdiff
+$ sudo apt update
+```
+If it says that some number of packages can be upgraded, then:
+```bash
+$ sudo apt upgrade
 ```
 
-It is also useful to use an SSH key to connect to GitHub, that way we don't need to enter username and password everytime we pull/push. See [this guide](https://help.github.com/en/articles/connecting-to-github-with-ssh).
-
-
-### Initial setup
-
-To start, we open a new terminal window. It should open by default in our home folder. To make sure this is the case, we can run `pwd` on the terminal. The output should be
-
+5. Install git, vim-gtk3, rxvt-unicode and i3:
 ```bash
-/home/name
+$ sudo apt install git vim-gtk3 rxvt-unicode i3
+```
+Installing vim-gtk3 instead of just vim allows one to use the system clipboard.
+
+
+6. Configure git:
+```bash
+$ git config --global user.name "Your Name"
+$ git config --global user.email your@email.com
+$ git config --global core.editor vim
+$ git config --global merge.tool vimdiff
+```
+It is also useful to use an SSH key to connect to GitHub, that way one doesn't need to enter username and password on every pull or push. See [this guide](https://help.github.com/en/articles/connecting-to-github-with-ssh). Using a passphrase implies again that it has to be introduced on every pull or push, so I personally prefer to skip using it.
+
+7. Now one can finally clone this repository. The first two lines below are just there because I like to keep all the local git repositories inside a single folder:
+```bash
+$ mkdir git
+$ cd git
+$ git clone git@github.com:pedro-nlb/dotfiles 
 ```
 
-To see our dotfiles, run `ls -a`. We can create a folder to backup our current dotfiles, e.g. by running `mkdir old_dotfiles`. We move the files that we want to replace by files from this repository to this folder. In our example we would run
-
+8. Optionally, one can backup some of the dotfiles that will be replaced. For example:
 ```bash
-mv .bashrc $HOME/old_dotfiles/.bashrc
-mv .vimrc $HOME/old_dotfiles/.vimrc
+$ mkdir .old_dotfiles
+$ cp .bashrc $HOME/old_dotfiles/.bashrc
 ```
-Next we change the current directory to the directory in which we want to clone this repository. For example
-
+Then one can safely replace them by [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link) to the ones from this repository:
 ```bash
-mkdir git
-cd git
-```
-
-We fork this repository on GitHub and then run in the terminal
-
-```bash
-git clone git@github.com:username/dotfiles.git
-```
-
-Finally we can create the corresponding [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link). In our example we would run
-
-```bash
-ln -s /home/name/git/dotfiles/.bashrc /home/name/.bashrc
-ln -s /home/name/git/dotfiles/.vimrc /home/name/.vimrc
-```
-We can also create symbolic links for entire folders, for instance
-
-```bash
-ln -s /home/name/git/dotfiles/.vim /home/name/.vim
-ln -s /home/name/git/dotfiles/i3 /home/name/.config/i3
+$ rm .bashrc
+$ ln -s /home/username/git/dotfiles/.bashrc /home/username/.bashrc
+$ ln -s /home/username/git/dotfiles/.bash_aliases /home/username/.bash_aliases
+$ ln -s /home/username/git/dotfiles/.bash_profile /home/username/.bash_profile
+$ ln -s /home/username/git/dotfiles/.vimrc /home/username/.vimrc
+$ ln -s /home/username/git/dotfiles/.vim /home/username/.vim
+$ ln -s /home/username/git/dotfiles/.xinitrc /home/username/.xinitrc
+$ ln -s /home/username/git/dotfiles/.Xresources /home/username/.Xresources
+$ ln -s /home/username/git/dotfiles/i3 /home/username/.config/i3
+$ ln -s /home/username/git/dotfiles/i3status /home/username/.config/i3status
+$ ln -s /home/username/git/dotfiles/gtk-3.0 /home/username/.config/gtk-3.0
 ```
 
-### Pull changes from GitHub
-
-We open a new terminal window and change the current directory to the directory of the local repository. In our example, we would run
-
+9. To set rxvt-unicode as the default terminal emulator:
 ```bash
-cd $HOME/git/dotfiles
+$ sudo update-alternatives --config x-terminal-emulator
 ```
 
-Then we pull the changes from GitHub by running the command
-
+10. One can log out and log into i3 by selecting this option from the menu that appears in the bottom-right corner of the screen while entering one's password.
+To set up the wallpaper:
 ```bash
-git pull origin master
+$ sudo apt install feh
+$ cd Pictures
+$ wget https://i.redd.it/c3uhsgo1vx541.jpg
+$ mv c3uhsgo1vx541.jpg wallpaper.jpg
 ```
-
-**Shortcut**: if *.bashrc* is one of the files that is taken from this repository, it is enough to run
-
+For the fading effects:
 ```bash
-pull
+$ sudo apt install compton
 ```
-
-### Push changes to GitHub
-
-We open a new terminal window and change the current directory to the directory of the local repository. In our example, we would run
-
-```bash
-cd $HOME/git/dotfiles
-```
-
-Then we add, commit and push the local changes to GitHub by running the commands
-
-```bash
-git add .
-git commit -m "Commit message, e.g. updated .bashrc"
-git push origin master
-```
-
-**Shortcut**: if *.bashrc* is one of the files that is taken from this repository, it is enough to run
-
-```bash
-push "Commit message, e.g. updated .bashrc"
-```
+To see the result, one can restart i3 by pressing mod+R.
