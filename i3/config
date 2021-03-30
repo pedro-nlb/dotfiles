@@ -223,3 +223,9 @@ focus_follows_mouse no
 
 # Fade transition effect
 exec_always compton -f
+
+# Hide cursor
+exec_always --no-startup-id unclutter
+
+# Cast pressed keys with key-mon
+bindsym $mod+c exec key-mon -m --nomouse --backgroundless --theme=oblivion

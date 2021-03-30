@@ -1,0 +1,5 @@
+[Default Applications]
+application/pdf=org.kde.okular.desktop
+image/vnd.djvu+multipage=org.kde.okular.desktop
+text/plain=vim.desktop
+audio/mpeg=vlc.desktop

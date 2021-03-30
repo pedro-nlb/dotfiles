@@ -8,3 +8,4 @@ alias phd="cd ~/git/phd/updates; vim week12.tex";
 alias p3="cd ~/git/adapted-extension; vim chapter2.tex";
 alias lims="cd ~/git/blurb-limits-colimits; vim main.tex";
 alias eg="cd ~/git/notes-enumerative-geometry; vim main.tex";
+alias test="cd ~/git/blurb-test; vim main.tex";
