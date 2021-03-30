@@ -76,7 +76,7 @@ Some addendums:
 
 * To set a new default application for a certain filetype, one has to first figure out the name of the filetype (with xdg-mime query filetype filename) and the name of the application (which appears in /usr/share/applications). For example, to set okular as the default pdf reader:
 				
-	$ echo "$(xdg-mime query filetype foo.pdf)=org.kde.okular.desktop"
+        $ echo "$(xdg-mime query filetype foo.pdf)=org.kde.okular.desktop"
 
 * One can use vim-like shortcuts in okular by importing the shortcut file *vimlike.shortcuts*.
 
