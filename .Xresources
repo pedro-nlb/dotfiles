@@ -28,10 +28,10 @@
 *color15:		#f1efee
 
 URxvt.depth:		32
-URxvt.background:	[90]#000000
+URxvt.background:	[85]#000000
 
 URxvt.transparent: true
-URxvt.shading:15
+URxvt.shading: 30
 
 URxvt.scrollBar:	false
 
