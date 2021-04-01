@@ -1,9 +1,9 @@
 [user]
-	name = Pedro Núñez
-	email = pedro.nz.lb@gmail.com
+  name = Pedro Núñez
+  email = pedro.nz.lb@gmail.com
 [core]
-	editor = vim
+  editor = vim
 [merge]
-	tool = vimdiff
+  tool = vimdiff
 [init]
-	defaultBranch = master
+  defaultBranch = master

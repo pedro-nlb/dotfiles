@@ -12,9 +12,10 @@ filetype indent on
 " Basic auto indentation for unknow filetypes
 set autoindent
 
-" Indentation with hard tabs and smartindent
+" Indentation without hard tabs and smartindent
+set expandtab
 set shiftwidth=2
-set tabstop=2
+set softtabstop=2
 
 " Turn hybrid line numbers on
 set number relativenumber

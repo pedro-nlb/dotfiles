@@ -7,8 +7,8 @@
 # If the above line is not correctly displayed, fix your editor first!
 
 general {
-        colors = true
-        interval = 5
+  colors = true
+  interval = 5
 }
 
 #order += "ipv6"
@@ -22,17 +22,17 @@ order += "tztime local"
 order += "volume master"
 
 wireless _first_ {
-        format_up = "W: (%quality at %essid) %ip"
-        format_down = "W: down"
+  format_up = "W: (%quality at %essid) %ip"
+  format_down = "W: down"
 }
 
 ethernet _first_ {
-        format_up = "E: %ip (%speed)"
-        format_down = "E: down"
+  format_up = "E: %ip (%speed)"
+  format_down = "E: down"
 }
 
 battery all {
-        format = "%status %percentage %remaining"
+  format = "%status %percentage %remaining"
 }
 
 #disk "/" {
@@ -40,25 +40,25 @@ battery all {
 #}
 
 load {
-        format = "%1min"
+  format = "%1min"
 }
 
 memory {
-        format = "%used %available"
-        threshold_degraded = "1G"
-        format_degraded = "MEMORY < %available"
+  format = "%used %available"
+  threshold_degraded = "1G"
+  format_degraded = "MEMORY < %available"
 }
 
 # European date format
 tztime local {
-        format = " %d.%m.%Y %H:%M:%S "
+  format = " %d.%m.%Y %H:%M:%S "
 }
 
 # Volume
 volume master {
-				format = "♪: %volume"
-        format_muted = ": muted (%volume)"
-				device = "default"
-				mixer = "Master"
-				mixer_idx = 0
+  format = "♪: %volume"
+  format_muted = ": muted (%volume)"
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
 }
