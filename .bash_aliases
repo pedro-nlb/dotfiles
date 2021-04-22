@@ -1,11 +1,11 @@
 alias xup="xrdb ~/.Xresources";
 alias confi3="vim ~/.config/i3/config";
-alias pkglsup="pacman -Qqe > ~/Docs/pkglist.txt";
 alias uni="ssh pedro@login.mathematik.uni-freiburg.de";
 alias x="exit";
 alias off="poweroff";
 alias phd="cd ~/git/phd/updates; vim week16.tex";
 alias p3="cd ~/git/adapted-extension; vim chapter2.tex";
 alias lims="cd ~/git/blurb-limits-colimits; vim main.tex";
-alias eg="cd ~/git/notes-enumerative-geometry; vim main.tex";
 alias thom="cd ~/git/script-thom-isomorphism; vim main.tex";
+alias hilb="cd ~/git/notes-hilbert; vim main.tex";
+alias kt="cd ~/git/notes-k-theory; vim main.tex";
