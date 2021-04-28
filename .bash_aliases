@@ -9,3 +9,4 @@ alias lims="cd ~/git/blurb-limits-colimits; vim main.tex";
 alias thom="cd ~/git/script-thom-isomorphism; vim main.tex";
 alias hilb="cd ~/git/notes-hilbert; vim main.tex";
 alias kt="cd ~/git/notes-k-theory; vim main.tex";
+alias bxca="cd ~/git/solutions-ber13-1-2; vim main.tex";
