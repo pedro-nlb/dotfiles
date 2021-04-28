@@ -73,7 +73,7 @@ new() {
   # First argument is the type of template (beamer/blurb/notes/script)
   # Second argument is the name of the new document (blank spaces will be replaced by hyphens)
   cd "${HOME}/git"
-  if [ "${1}" = "beamer" ] || [ "${1}" = "blurb" ] || [ "${1}" = "notes" ] || [ "${1}" = "script" || [ "${1}" = "solutions" ]
+  if [ "${1}" = "beamer" ] || [ "${1}" = "blurb" ] || [ "${1}" = "notes" ] || [ "${1}" = "script" ] || [ "${1}" = "solutions" ]
   then
     mkdir "$(echo "${@}" | tr ' ' '-')"
     cd "$(echo "${@}" | tr ' ' '-')"
