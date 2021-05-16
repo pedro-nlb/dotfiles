@@ -37,7 +37,7 @@ Using different programs requires changing the content of the files or the files
         $ mkdir git
         $ cd git
         $ git clone git@github.com:pedro-nlb/dotfiles
-        $ git clone git@github.com:pedro-nlb/dotfiles
+        $ git clone git@github.com:pedro-nlb/latex-templates
 
 8. One can backup some of the dotfiles that will be replaced, as is done with *.bashrc* in the first two lines below. Afterwards one can safely remove them and add [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link) to the ones from this repository:
 
