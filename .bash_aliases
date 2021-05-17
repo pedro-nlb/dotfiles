@@ -1,9 +1,12 @@
 alias xup="xrdb ~/.Xresources";
 alias confi3="vim ~/.config/i3/config";
+alias dim="xrandr --output eDP-1 --brightness 0.5";
+alias warm="redshift -t 3000:3000 & exit";
 alias uni="ssh pedro@login.mathematik.uni-freiburg.de";
 alias x="exit";
 alias off="poweroff";
-alias phd="cd ~/git/phd/updates; vim week19.tex";
+alias tlist="flatpak run com.github.alainm23.planner & exit";
+alias phd="cd ~/git/phd/updates; vim week20.tex";
 alias p3="cd ~/git/adapted-extension; vim chapter2.tex";
 alias lims="cd ~/git/blurb-limits-colimits; vim main.tex";
 alias thom="cd ~/git/script-thom-isomorphism; vim main.tex";
