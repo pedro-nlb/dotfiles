@@ -95,7 +95,7 @@ new() {
       echo "alias ${REPLY}=\"cd ~/git/$(echo "${@}" | tr ' ' '-'); vim main.tex\";" >> ".bash_aliases"
     fi
   else
-    echo "Please enter as a first argument the type of template to use (beamer/blurb/notes/script) and use the remaining arguments for the name of the document and repository (blank spaces will be replaced by hyphens)."
+    echo "Please enter as a first argument the type of template to use (beamer/blurb/notes/script/solutions) and use the remaining arguments for the name of the document and repository (blank spaces will be replaced by hyphens)."
   fi
   source .bash_aliases;
 }
