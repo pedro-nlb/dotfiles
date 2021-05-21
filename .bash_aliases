@@ -14,3 +14,5 @@ alias hilb="cd ~/git/notes-hilbert; vim main.tex";
 alias kt="cd ~/git/notes-k-theory; vim main.tex";
 alias bxca="cd ~/git/solutions-ber13-1-3; vim main.tex";
 alias axca="cd ~/git/solutions-alp21-0; vim main.tex";
+alias bhilb="cd ~/git/blurb-hilb; vim main.tex";
+alias bthom="cd ~/git/blurb-thom; vim main.tex";
