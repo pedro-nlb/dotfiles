@@ -138,7 +138,4 @@ p() {
 #  fi
 #}
 
-PATH=$PATH:/home/pedro/.elan/bin
-
-# Created by `pipx` on 2021-05-16 21:53:07
-export PATH="$PATH:/home/pedro/.local/bin"
+bind 'set bell-style none'
