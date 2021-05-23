@@ -28,7 +28,7 @@ Using different programs requires changing the content of the files or the files
 
 5. Install the desired packages. Only vlc is not directly used by any of the dotfiles in this repository. Installing vim-gtk3 instead of just vim allows one to use the system clipboard, while the unclutter-xfixes package corrects some known bugs in the unclutter package.
 
-        $ sudo apt install git vim-gtk3 rxvt-unicode i3 feh compton unclutter-xfixes okular vlc texlive-full latexmk hub
+        $ sudo apt install git vim-gtk3 rxvt-unicode i3 feh compton unclutter-xfixes redshift okular vlc texlive-full latexmk hub
 
 6. [Optional] Set up an SSH key to connect to GitHub; that way one doesn't need to enter username and password on every pull or push. See [this guide](https://help.github.com/en/articles/connecting-to-github-with-ssh). Using a passphrase implies again that it has to be introduced on every pull or push, so I personally prefer to skip using it.
 
