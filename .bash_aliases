@@ -1,7 +1,5 @@
 alias xup="xrdb ~/.Xresources";
 alias confi3="vim ~/.config/i3/config";
-alias dim="xrandr --output eDP-1 --brightness 0.5";
-alias warm="redshift -t 3000:3000 & exit";
 alias uni="ssh pedro@login.mathematik.uni-freiburg.de";
 alias x="exit";
 alias off="poweroff";

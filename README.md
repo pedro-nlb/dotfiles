@@ -41,21 +41,24 @@ Using different programs requires changing the content of the files or the files
 
 8. One can backup some of the dotfiles that will be replaced, as is done with *.bashrc* in the first two lines below. Afterwards one can safely remove them and add [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link) to the ones from this repository:
 
-        $ mkdir .old_dotfiles
-        $ cp .bashrc $HOME/old_dotfiles/.bashrc
-        $ rm .bashrc
-        $ ln -s /home/username/git/dotfiles/.bashrc /home/username/.bashrc
-        $ ln -s /home/username/git/dotfiles/.bash_aliases /home/username/.bash_aliases
-        $ ln -s /home/username/git/dotfiles/.bash_profile /home/username/.bash_profile
-        $ ln -s /home/username/git/dotfiles/.vimrc /home/username/.vimrc
-        $ ln -s /home/username/git/dotfiles/.vim /home/username/.vim
-        $ ln -s /home/username/git/dotfiles/.gitconfig /home/username/.gitconfig
-        $ ln -s /home/username/git/dotfiles/.xinitrc /home/username/.xinitrc
-        $ ln -s /home/username/git/dotfiles/.Xresources /home/username/.Xresources
-        $ ln -s /home/username/git/dotfiles/i3 /home/username/.config/i3
-        $ ln -s /home/username/git/dotfiles/i3status /home/username/.config/i3status
-        $ ln -s /home/username/git/dotfiles/gtk-3.0 /home/username/.config/gtk-3.0
-        $ ln -s /home/username/git/dotfiles/mimeapps.list /home/username/.config/mimeapps.list
+        $ mkdir ${HOME}/.old_dotfiles
+        $ cp ${HOME}/.bashrc ${HOME}/old_dotfiles/.bashrc
+        $ cp -r ${HOME}/.config/gtk-3.0 ${HOME}/old_dotfiles/gtk-3.0
+        $ rm ${HOME}/.bashrc
+        $ rm -r ${HOME}/.config/gtk-3.0
+        $ ln -s /home/pedro/git/dotfiles/.bashrc /home/pedro/.bashrc
+        $ ln -s /home/pedro/git/dotfiles/.bash_aliases /home/pedro/.bash_aliases
+        $ ln -s /home/pedro/git/dotfiles/.bash_profile /home/pedro/.bash_profile
+        $ ln -s /home/pedro/git/dotfiles/.vimrc /home/pedro/.vimrc
+        $ ln -s /home/pedro/git/dotfiles/.vim /home/pedro/.vim
+        $ ln -s /home/pedro/git/dotfiles/.gitconfig /home/pedro/.gitconfig
+        $ ln -s /home/pedro/git/dotfiles/.xinitrc /home/pedro/.xinitrc
+        $ ln -s /home/pedro/git/dotfiles/.Xresources /home/pedro/.Xresources
+        $ ln -s /home/pedro/git/dotfiles/i3 /home/pedro/.config/i3
+        $ ln -s /home/pedro/git/dotfiles/i3status /home/pedro/.config/i3status
+        $ ln -s /home/pedro/git/dotfiles/gtk-3.0 /home/pedro/.config/gtk-3.0
+        $ ln -s /home/pedro/git/dotfiles/mimeapps.list /home/pedro/.config/mimeapps.list
+        $ ln -s /home/pedro/git/dotfiles/redshift.conf /home/pedro/.config/redshift.conf
 
 9. To set rxvt-unicode as the default terminal emulator:
 
@@ -65,7 +68,7 @@ Using different programs requires changing the content of the files or the files
 
 11. [Optional] To set up a wallpaper, save the image that you like as wallpaper.jpg in the Pictures folder. For example:
 
-        $ cd Pictures
+        $ cd ${HOME}/Pictures
         $ wget https://i.redd.it/c3uhsgo1vx541.jpg
         $ mv c3uhsgo1vx541.jpg wallpaper.jpg
 

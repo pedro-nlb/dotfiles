@@ -139,3 +139,8 @@ p() {
 #}
 
 bind 'set bell-style none'
+
+dim() {
+  # Change the screen's brightness
+  xrandr --output eDP-1 --brightness ${1}
+}
