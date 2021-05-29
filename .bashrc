@@ -144,3 +144,6 @@ dim() {
   # Change the screen's brightness
   xrandr --output eDP-1 --brightness ${1}
 }
+
+# Created by `pipx` on 2021-05-29 13:49:05
+export PATH="$PATH:/home/pedro/.local/bin"
