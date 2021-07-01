@@ -28,7 +28,7 @@
 *color15:		#f1efee
 
 URxvt.depth:		32
-URxvt.background:	[85]#000000
+URxvt.background:	[100]#000000
 
 URxvt.transparent: true
 URxvt.shading: 30
